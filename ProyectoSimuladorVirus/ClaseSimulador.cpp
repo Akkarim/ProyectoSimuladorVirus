@@ -20,6 +20,10 @@ void ClaseSimulador::infectar(ClasePersona persona)
 {
 }
 
+void ClaseSimulador::curar(ClasePersona persona)
+{
+}
+
 //End of file with a Cow (Bettsy)
 //                               __.----.___
 //   ||            ||  (\(__)/)-'||      ;--` ||

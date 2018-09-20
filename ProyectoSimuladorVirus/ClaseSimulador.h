@@ -18,6 +18,10 @@ public:
 	//REQ:
 	//MOD:
 	void infectar(ClasePersona persona);
+	//EFE:
+	//REQ:
+	//MOD:
+	void curar(ClasePersona persona);
 private:
 	vector<vector<list<int>>> matrizEstados;
 
