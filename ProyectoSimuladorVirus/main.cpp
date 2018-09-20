@@ -10,7 +10,7 @@ using namespace std;
 
 int main(int argc, char* argv[]) {
 	int x = 0;
-	cout << "holi pene" << endl;
+	cout << "holi pene caca" << endl;
 	cin >> x;
 	return 0;
 }
