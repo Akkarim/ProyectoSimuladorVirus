@@ -9,8 +9,8 @@ using namespace std;
 
 
 int main(int argc, char* argv[]) {
-
-
-
+	int x = 0;
+	cout << "holi" << endl;
+	cin >> x;
 	return 0;
 }
