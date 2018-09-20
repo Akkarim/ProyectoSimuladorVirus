@@ -11,6 +11,15 @@ ClaseSimulador::~ClaseSimulador()
 {
 }
 
+void ClaseSimulador::llenarMatriz(int m, list<ClasePersona> poblacion)
+{
+
+}
+
+void ClaseSimulador::infectar(ClasePersona persona)
+{
+}
+
 //End of file with a Cow (Bettsy)
 //                               __.----.___
 //   ||            ||  (\(__)/)-'||      ;--` ||
