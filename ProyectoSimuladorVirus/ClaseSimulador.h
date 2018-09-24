@@ -1,7 +1,11 @@
 #pragma once
 #include <vector>
 #include <list>
+#include <omp.h>
 #include "ClasePersona.h"
+#include <chrono>
+#include <random>
+//#include <Billy>
 
 using namespace std;
 
@@ -10,15 +14,11 @@ class ClaseSimulador
 public:
 	ClaseSimulador();
 	~ClaseSimulador();
-	//EFE: Llena una lista con todas las personas, osea genera la poblacion.
-	//REQ: Probabilidades válidas, al igual que la cantidad y además el tamaño de la matriz a trabajar para generar posiciones.
-	//MOD: población.
-	void llenarListaPersonas(double infec, double rec, int estado, int tamano,int cantidad);
 
 	//EFE: Genera una matriz con los estados de cada persona
 	//REQ: Un M coherente con la cantidad de personas
 	//MOD: matrizEstado
-	void llenarMatriz(int m,list<ClasePersona> poblacion);
+	void llenarMatriz(double cantInfec, double infec, double rec, int tamano, int cantidad);
 
 	//EFE:
 	//REQ:
@@ -32,10 +32,10 @@ public:
 	//EFE:
 	//REQ:
 	//MOD:
-	pair<int,int> generarPosRandom(int tam, list<pair<int,int>> &existentes);
+	pair<int,int> generarPosRandom(int tam);
+
 private:
-	vector<vector<list<int>>> matrizEstados;
-	list<ClasePersona> poblacion;
+	vector<vector<list<ClasePersona>>> poblacion;
 };
 
 //End of file with a Cow (Bettsy)
@@ -47,3 +47,4 @@ private:
 //  -||------------||----`--'----||-----------||-
 //   ||            ||       `|| ||| || ||     ||jgs
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+

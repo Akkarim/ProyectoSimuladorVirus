@@ -3,22 +3,24 @@
 #include <iostream>
 #include <omp.h>
 #include "ClasePersona.h"
+#include "ClaseSimulador.h"
 using namespace std;
 
 #define _CRT_SECURE_NO_WARNINGS 1 // para deshabilitar errores por uso de funciones deprecated sobre CRT o consola
 #pragma warning(disable : 4996)
 
 ClasePersona persona;
-
+ClaseSimulador simulador;
 int main(int argc, char* argv[]) {
 	double inf, rec;
-	cout << "Inserte la probabilidad de Infección: "<< endl;
-	cin >> inf;
-	cout << "Inserte la proba de Recuperación: " << endl;
-	cin >> rec;
+	//cout << "Inserte la probabilidad de Infección: "<< endl;
+	//cin >> inf;
+	//cout << "Inserte la proba de Recuperación: " << endl;
+	//cin >> rec;
+	simulador.llenarMatriz(8,25,25,100,50);
+	//persona.setProbaInf(inf);
+	//persona.setProbaRec(rec);
 
-	persona.setProbaInf(inf);
-	persona.setProbaRec(rec);
 
 	int x;
 	cin >> x;
