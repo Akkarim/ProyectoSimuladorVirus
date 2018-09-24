@@ -12,9 +12,9 @@ ClasePersona persona;
 
 int main(int argc, char* argv[]) {
 	double inf, rec;
-	cout << "Inserte la probabilidad de Infección: "<< endl;
+	cout << "Inserte la probabilidad de InfecciÃ³n: "<< endl;
 	cin >> inf;
-	cout << "Inserte la proba de Recuperación: " << endl;
+	cout << "Inserte la proba de RecuperaciÃ³n: " << endl;
 	cin >> rec;
 
 	persona.setProbaInf(inf);
