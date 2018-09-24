@@ -49,6 +49,11 @@ void ClaseSimulador::llenarMatriz(double cantInfec, double infec, double rec, in
 	}
 }
 
+void ClaseSimulador::mover()
+{
+
+}
+
 void ClaseSimulador::infectar(ClasePersona persona)
 {
 }

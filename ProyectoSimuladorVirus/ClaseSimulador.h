@@ -23,6 +23,11 @@ public:
 	//EFE:
 	//REQ:
 	//MOD:
+	void mover();
+
+	//EFE:
+	//REQ:
+	//MOD:
 	void infectar(ClasePersona persona);
 	//EFE:
 	//REQ:
