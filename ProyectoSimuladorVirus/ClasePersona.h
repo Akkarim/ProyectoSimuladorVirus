@@ -7,6 +7,7 @@ class ClasePersona
 public:
 	double probaInfectibilidad;
 	double probaRecuperacion;
+	int semana;
 	int estado;
 	pair<int, int> posicion;
 
@@ -25,9 +26,16 @@ public:
 	void setEstado(int status);
 	int getEstado();
 
-	//EFE: Retorna posicion
+	//EFE: Retorna y modifica la  posicion
 	void setPosicion(pair<int, int>);
 	pair<int, int> getPosicion();
+
+	//EFE: Retorna y modifca el número de semnas
+	void setSemana(int sem);
+	int getSemana();
+
+	//EFE: Aumente las semanas
+	void modSemana();
 
 };
 

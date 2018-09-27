@@ -18,29 +18,34 @@ public:
 	//EFE: Genera una matriz con los estados de cada persona
 	//REQ: Un M coherente con la cantidad de personas
 	//MOD: matrizEstado
-	void llenarMatriz(double cantInfec, double infec, double rec, int tamano, int cantidad);
+	void llenarLista(double cantInfec, double infec, double rec, int tamano, int cantidad);
 
 	//EFE:
 	//REQ:
 	//MOD:
-	void mover();
+	void mover(int contSem);
 
 	//EFE:
 	//REQ:
 	//MOD:
-	void infectar(ClasePersona persona);
+	bool infectar(ClasePersona persona);
 	//EFE:
 	//REQ:
 	//MOD:
-	void curar(ClasePersona persona);
+	bool curar(ClasePersona persona);
 
 	//EFE:
 	//REQ:
 	//MOD:
-	pair<int,int> generarPosRandom(int tam);
+	pair<int,int> generarPosRandom(int tam, list<pair<int, int>> repetidas);
+
+	double genRandom();
+
+	int contInfectados(list<ClasePersona> lista);
 
 private:
-	vector<vector<list<ClasePersona>>> poblacion;
+	vector<vector<int>> poblacionInfectada;
+	list<ClasePersona> poblacion;
 };
 
 //End of file with a Cow (Bettsy)

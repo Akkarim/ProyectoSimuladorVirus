@@ -31,6 +31,16 @@ void ClasePersona::setProbaRec(double rec) {
 	this->probaRecuperacion = rec;
 }
 
+void ClasePersona::setSemana(int sem) {
+	this->semana = sem;
+}
+int ClasePersona::getSemana() {
+	return this->semana;
+}
+
+void ClasePersona::modSemana() {
+	this->semana++;
+}
 
 
 
