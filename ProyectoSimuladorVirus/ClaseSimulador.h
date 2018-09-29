@@ -23,7 +23,12 @@ public:
 	//EFE:
 	//REQ:
 	//MOD:
-	void mover(int contSem);
+	void mover();
+
+	//EFE:
+	//REQ:
+	//MOD:
+	void revisar(int contSem);
 
 	//EFE:
 	//REQ:
@@ -44,8 +49,8 @@ public:
 	int contInfectados(list<ClasePersona> lista);
 
 private:
-	vector<vector<int>> poblacionInfectada;
-	list<ClasePersona> poblacion;
+	vector<vector<int>> poblacionInfectada; //Matriz con la cantidad de enfermos por posición
+	list<ClasePersona> poblacion; //Lista con todas las personas.
 };
 
 //End of file with a Cow (Bettsy)
