@@ -67,41 +67,6 @@ void ClaseSimulador::mover()
 			poblacionInfectada[it->getPosicion().first][it->getPosicion().second] += 1;
 		}
 	}
-	// int cont = 0; // Privado
-	// int cantInfectados; //  privado
-	// for (int i = 0; i < poblacion.size(); i++) { // nested for 
-	// 	for (int j = 0; j < poblacion.size(); j++) {
-	// 		if (!poblacion[i][j].empty()) { // si no est� vac�a se la mete
-	// 			if (poblacion[i][j].size() > 1) { // si hay m�s de uno en esa pos
-	// 				cont = 0;
-	// 				cantInfectados = contInfectados(poblacion[i][j]);
-	// 				while (cont < poblacion[i][j].size()) {
-	// 					for (list<ClasePersona>::iterator it = poblacion[i][j].begin(); it != poblacion[i][j].end(); it++) {
-	// 						if (it->getEstado() == 0) {
-	// 							for (int x = 0; x < cantInfectados; x++) { //
-	// 								if (infectar(*it)) {
-	// 									x = cantInfectados;
-	// 									it->modSemana();
-	// 								}
-	// 							}
-	// 						}
-	// 					}
-	// 				}
-	// 			}
-	// 			else { // Si hay solo uno
-	// 				if (poblacion[i][j].front().getEstado() == 1) { // Si esta enfermo
-	// 					if (poblacion[i][j].front().getSemana() == contSem) { // Y tiene el lim de semanas
-	// 						poblacion[i][j].front().setEstado(3);//se muere we
-	// 					}else {
-	// 						if (!curar(poblacion[i][j].front())) { // si no se cura
-	// 							poblacion[i][j].front().modSemana(); // Aumenta la semana de la persona
-	// 						}
-	// 					} 
-	// 				}
-	// 			}
-	// 		}
-	// 	}
-	// }
 }
 
 void ClaseSimulador::revisar(int contSem){
@@ -116,7 +81,11 @@ void ClaseSimulador::revisar(int contSem){
 				poblacionInfectada[it->getPosicion().first][it->getPosicion().second] -= 1;
 			}
 		}else if(est==0){
-			
+			for(int i=0; i<poblacionInfectada[it->getPosicion().first][it->getPosicion().second]; i++){
+				if(infectar(*it)){
+					i = poblacionInfectada[it->getPosicion().first][it->getPosicion().second];
+				}
+			}
 		}
 	}
 }
@@ -126,6 +95,7 @@ bool ClaseSimulador::infectar(ClasePersona persona)
 	double random = genRandom();
 	if (random <= persona.probaInfectibilidad) {
 		persona.setEstado(1);
+		persona.modSemana();
 		poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] += 1; 
 		return true;
 	}
