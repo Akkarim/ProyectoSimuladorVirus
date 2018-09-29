@@ -60,6 +60,18 @@ void ClaseSimulador::mover()
 {
 	pair<int,int> posAnt;
 	for(list<ClasePersona>::iterator it = poblacion[i][j].begin(); it != poblacion[i][j].end(); it++){
+		if(it->getPosicion().first==0 && it->getPosicion().second==0){ //Esquina Superior Izquierda
+
+		}
+		if(it->getPosicion().first==0 && it->getPosicion().second==poblacionInfectada.size()-1){ //Esquina Superior Derecha
+
+		}
+		if(it->getPosicion().first==poblacionInfectada.size()-1 && it->getPosicion().second==0){ //Esquina Inferior Izquierda
+
+		}
+		if(){
+			
+		}
 		posAnt = it->getPosicion();
 		it->setPosicion(generarPosRandom(poblacionInfectada.size()));
 		if(it->getEstado()==1){
