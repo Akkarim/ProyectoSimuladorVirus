@@ -56,10 +56,21 @@ void ClaseSimulador::mover()
 {
 	default_random_engine gen;
 	int random;
-
-#pragma omp parallel num_threads(omp_get_max_threads()) private(random) shared(gen)
+	list<ClasePersona> miLista;
+	int distribucion = poblacion.size() / omp_get_max_threads();
+	list<ClasePersona>::iterator personaAsignada = poblacion.begin();
+#pragma omp parallel num_threads(omp_get_max_threads()) private(random,miLista) shared(gen,personaAsignada,distribucion)
 	{
-		for (list<ClasePersona>::iterator it = poblacion.begin(); it != poblacion.end(); it++) {
+	
+#pragma omp critical
+		{
+			for (int i = 0; i < distribucion;i++) {
+				miLista.push_back(*personaAsignada);
+				personaAsignada++;
+			}
+		}
+
+		for (list<ClasePersona>::iterator it = miLista.begin(); it != miLista.end(); it++) {
 			if (it->getPosicion().first == 0 && it->getPosicion().second == 0) { //Esquina Superior Izquierda
 				uniform_int_distribution<int> distribution(0, 3);
 				random = distribution(gen);
@@ -161,106 +172,107 @@ void ClaseSimulador::mover()
 				}
 				else if (random == 2) {//Abajo
 #pragma omp critical
-					abajo(*it);
+				abajo(*it);
 				}
 				else if (random == 3) {//Diagonal Abajo Izquierda
 #pragma omp critical
-					diaIzqAbajo(*it);
+				diaIzqAbajo(*it);
 				}
 				else {//Diagonal Abajo Derecha
 #pragma omp critical
-					diaDerAbajo(*it);
+				diaDerAbajo(*it);
 				}
 			}
 			else if (it->getPosicion().first == poblacionInfectada.size() - 1) { //Derecha
-				uniform_int_distribution<int> distribution(0, 5);
-				random = (int)distribution(gen);
-				if (random == 0) {//Izquierda
+			uniform_int_distribution<int> distribution(0, 5);
+			random = (int)distribution(gen);
+			if (random == 0) {//Izquierda
 #pragma omp critical
-					izquierda(*it);
-				}
-				else if (random == 1) {//Arriba
+				izquierda(*it);
+			}
+			else if (random == 1) {//Arriba
 #pragma omp critical
-					arriba(*it);
-				}
-				else if (random == 2) {//Abajo
+				arriba(*it);
+			}
+			else if (random == 2) {//Abajo
 #pragma omp critical
-					abajo(*it);
-				}
-				else if (random == 3) {//Diagonal Arriba Izquierda
+				abajo(*it);
+			}
+			else if (random == 3) {//Diagonal Arriba Izquierda
 #pragma omp critical
-					diaIzqArriba(*it);
-				}
-				else {//Diagonal Abajo Izquierda
+				diaIzqArriba(*it);
+			}
+			else {//Diagonal Abajo Izquierda
 #pragma omp critical
-					diaIzqAbajo(*it);
-				}
+				diaIzqAbajo(*it);
+			}
 			}
 			else if (it->getPosicion().second == poblacionInfectada.size() - 1) { //Abajo
-				uniform_int_distribution<int> distribution(0, 5);
-				random = (int)distribution(gen);
-				if (random == 0) {//Derecha
+			uniform_int_distribution<int> distribution(0, 5);
+			random = (int)distribution(gen);
+			if (random == 0) {//Derecha
 #pragma omp critical
-					derecha(*it);
-				}
-				else if (random == 1) {//Arriba
+				derecha(*it);
+			}
+			else if (random == 1) {//Arriba
 #pragma omp critical
-					arriba(*it);
-				}
-				else if (random == 2) {//Izquierda
+				arriba(*it);
+			}
+			else if (random == 2) {//Izquierda
 #pragma omp critical
-					izquierda(*it);
-				}
-				else if (random == 3) {//Diagonal Arriba Derecha
+				izquierda(*it);
+			}
+			else if (random == 3) {//Diagonal Arriba Derecha
 #pragma omp critical
-					diaDerArriba(*it);
-				}
-				else {//Diagonal Arriba Izquierda
+				diaDerArriba(*it);
+			}
+			else {//Diagonal Arriba Izquierda
 #pragma omp critical
-					diaDerAbajo(*it);
-				}
+				diaDerAbajo(*it);
+			}
 			}
 			else {
-				uniform_int_distribution<int> distribution(0, 8);
-				random = (int)distribution(gen);
-				if (random == 0) {//Arriba
+			uniform_int_distribution<int> distribution(0, 8);
+			random = (int)distribution(gen);
+			if (random == 0) {//Arriba
 #pragma omp critical
-					arriba(*it);
-				}
-				else if (random == 1) {//Abajo
+				arriba(*it);
+			}
+			else if (random == 1) {//Abajo
 #pragma omp critical
-					abajo(*it);
-				}
-				else if (random == 2) {//Izquierda
+				abajo(*it);
+			}
+			else if (random == 2) {//Izquierda
 #pragma omp critical
-					izquierda(*it);
-				}
-				else if (random == 3) {//Derecha
+				izquierda(*it);
+			}
+			else if (random == 3) {//Derecha
 #pragma omp critical
-					derecha(*it);
-				}
-				else if (random == 4) {//Diagonal Abajo Derecha
+				derecha(*it);
+			}
+			else if (random == 4) {//Diagonal Abajo Derecha
 #pragma omp critical
-					diaDerAbajo(*it);
-				}
-				else if (random == 5) {//Diagonal Abajo Izquierda
+				diaDerAbajo(*it);
+			}
+			else if (random == 5) {//Diagonal Abajo Izquierda
 #pragma omp critical
-					diaIzqAbajo(*it);
-				}
-				else if (random == 6) {//Diagonal Arriba Derecha
+				diaIzqAbajo(*it);
+			}
+			else if (random == 6) {//Diagonal Arriba Derecha
 #pragma omp critical
-					diaDerArriba(*it);
-				}
-				else {//Diagonal Arriba Izquierda
+				diaDerArriba(*it);
+			}
+			else {//Diagonal Arriba Izquierda
 #pragma omp critical
-					diaDerAbajo(*it);
-				}
+				diaDerAbajo(*it);
+			}
 			}
 		}
+
 #pragma omp single
 		cout << "Estos son despues de mover: " << endl;
 
-		for (list<ClasePersona>::iterator it = poblacion.begin(); it != poblacion.end(); it++) {
+		for (list<ClasePersona>::iterator it = miLista.begin(); it != miLista.end(); it++) {
 #pragma omp critical
 			cout << "Estado: " << it->getEstado() << " X: " << it->getPosicion().first << "Y: " << it->getPosicion().second << "Impreso por el hilo: "<<omp_get_thread_num<<endl;
 		}

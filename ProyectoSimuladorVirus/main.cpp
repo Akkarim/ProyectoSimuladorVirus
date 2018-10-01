@@ -17,7 +17,7 @@ int main(int argc, char* argv[]) {
 	//cin >> inf;
 	//cout << "Inserte la proba de Recuperación: " << endl;
 	//cin >> rec;
-	simulador.llenarLista(10,25,25,100,10);
+	simulador.llenarLista(10,25,25,100,12);
 	simulador.mover();
 	//persona.setProbaInf(inf);
 	//persona.setProbaRec(rec);
