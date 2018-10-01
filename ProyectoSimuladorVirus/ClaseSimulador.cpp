@@ -25,8 +25,8 @@ void ClaseSimulador::llenarLista(int cantInfec, double infec, double rec, int ta
 	int cantPorHilo = cantidad / omp_get_max_threads();
 #pragma omp parallel num_threads(omp_get_max_threads()) private(persona) shared(contador,tamano,cantidad)
 	{
-		persona.setProbaInf(infec);
-		persona.setProbaRec(rec);//Como todas son iguales al inicio, esto entra directo.
+		persona.setProbaInf(infec/100);
+		persona.setProbaRec(rec/100);//Como todas son iguales al inicio, esto entra directo.
 		for (int i = 0; i < cantPorHilo; i++) {
 			if (contador > 0) {
 				persona.setEstado(1);
