@@ -42,13 +42,14 @@ public:
 	//EFE:
 	//REQ:
 	//MOD:
-	pair<int,int> generarPosRandom(int tam, list<pair<int, int>> repetidas);
+	pair<int,int> generarPosRandom(int tam);
 
 	double genRandom();
 
 	int contInfectados(list<ClasePersona> lista);
 
 private:
+	
 	vector<vector<int>> poblacionInfectada; //Matriz con la cantidad de enfermos por posición
 	list<ClasePersona> poblacion; //Lista con todas las personas.
 };

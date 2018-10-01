@@ -3,7 +3,6 @@
 
 
 
-
 ClaseSimulador::ClaseSimulador()
 {
 }
@@ -16,7 +15,7 @@ ClaseSimulador::~ClaseSimulador()
 
 void ClaseSimulador::llenarLista(double cantInfec, double infec, double rec, int tamano, int cantidad)
 {
-	poblacion.resize(tamano);
+	poblacionInfectada.resize(tamano);
 	ClasePersona persona;
 	persona.setProbaInf(infec);
 	persona.setProbaRec(rec);//Como todas son iguales al inicio, esto entra directo.
@@ -59,11 +58,11 @@ void ClaseSimulador::llenarLista(double cantInfec, double infec, double rec, int
 void ClaseSimulador::mover()
 {
 	pair<int,int> posAnt;
-	for(list<ClasePersona>::iterator it = poblacion[i][j].begin(); it != poblacion[i][j].end(); it++){
+	for(list<ClasePersona>::iterator it = poblacion.begin(); it != poblacion.end(); it++){
 		if(it->getPosicion().first==0 && it->getPosicion().second==0){ //Esquina Superior Izquierda
 
 		}
-		if(it->getPosicion().first==0 && it->getPosicion().second==poblacionInfectada.size()-1){ //Esquina Superior Derecha
+		if(it->getPosicion().first==0 && it->getPosicion().second==poblacionInfectada){ //Esquina Superior Derecha
 
 		}
 		if(it->getPosicion().first==poblacionInfectada.size()-1 && it->getPosicion().second==0){ //Esquina Inferior Izquierda
@@ -82,24 +81,24 @@ void ClaseSimulador::mover()
 }
 
 void ClaseSimulador::revisar(int contSem){
-	int est;
-	for(list<ClasePersona>::iterator it = poblacion[i][j].begin(); it != poblacion[i][j].end(); it++){
-		est = it->getEstado();
-		if(est==1){
-			if(it->semana<contSem){
-				curar(*it);
-			}else{
-				it->setEstado(2);
-				poblacionInfectada[it->getPosicion().first][it->getPosicion().second] -= 1;
-			}
-		}else if(est==0){
-			for(int i=0; i<poblacionInfectada[it->getPosicion().first][it->getPosicion().second]; i++){
-				if(infectar(*it)){
-					i = poblacionInfectada[it->getPosicion().first][it->getPosicion().second];
-				}
-			}
-		}
-	}
+	//int est;
+	//for(list<ClasePersona>::iterator it = poblacion[i][j].begin(); it != poblacion[i][j].end(); it++){
+	//	est = it->getEstado();
+	//	if(est==1){
+	//		if(it->semana<contSem){
+	//			curar(*it);
+	//		}else{
+	//			it->setEstado(2);
+	//			poblacionInfectada[it->getPosicion().first][it->getPosicion().second] -= 1;
+	//		}
+	//	}else if(est==0){
+	//		for(int i=0; i<poblacionInfectada[it->getPosicion().first][it->getPosicion().second]; i++){
+	//			if(infectar(*it)){
+	//				i = poblacionInfectada[it->getPosicion().first][it->getPosicion().second];
+	//			}
+	//		}
+	//	}
+	//}
 }
 
 bool ClaseSimulador::infectar(ClasePersona persona)
@@ -116,14 +115,16 @@ bool ClaseSimulador::infectar(ClasePersona persona)
 	}
 }
 
-void ClaseSimulador::curar(ClasePersona persona)
+bool ClaseSimulador::curar(ClasePersona persona)
 {
 	double random = genRandom();
 	if (random <= persona.probaRecuperacion) {
 		persona.setEstado(2);
-		poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] -= 1; 
+		poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] -= 1;
+		return true;
 	}else {
 		persona.modSemana();
+		return false;
 	}
 }
 
@@ -156,7 +157,7 @@ int ClaseSimulador::contInfectados(list<ClasePersona> lista)
 
   return 0;*/
 
-pair<int, int> ClaseSimulador::generarPosRandom(int tam, list<pair<int,int>> repetidas)
+pair<int, int> ClaseSimulador::generarPosRandom(int tam)
 {
 	pair<int, int> pos;
 	default_random_engine gen;
