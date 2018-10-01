@@ -17,14 +17,7 @@ int main(int argc, char* argv[]) {
 	//cin >> inf;
 	//cout << "Inserte la proba de Recuperación: " << endl;
 	//cin >> rec;
-	//simulador.llenarMatriz(8,25,25,100,50);
-	cout << simulador.genRandom() << endl;
-	cout << simulador.genRandom() << endl;
-	cout << simulador.genRandom() << endl;
-	cout << simulador.genRandom() << endl;
-	cout << simulador.genRandom() << endl;
-	cout << simulador.genRandom() << endl;
-	cout << simulador.genRandom() << endl;
+	simulador.llenarLista(8,25,25,100,50);
 	//persona.setProbaInf(inf);
 	//persona.setProbaRec(rec);
 

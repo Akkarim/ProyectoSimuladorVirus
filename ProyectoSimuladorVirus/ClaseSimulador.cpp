@@ -16,11 +16,14 @@ ClaseSimulador::~ClaseSimulador()
 void ClaseSimulador::llenarLista(double cantInfec, double infec, double rec, int tamano, int cantidad)
 {
 	poblacionInfectada.resize(tamano);
+	for (int i = 0; i < tamano; i++) {
+		poblacionInfectada[i].resize(tamano);
+	}
 	ClasePersona persona;
 	persona.setProbaInf(infec);
 	persona.setProbaRec(rec);//Como todas son iguales al inicio, esto entra directo.
 	int contador = cantidad * (cantInfec / 100);//Cantidad de personas infectadas inicialmente
-#pragma omp parallel num_threads(omp_get_max_threads()) private(persona) shared(contador,tamano,cantidad,posiciones)
+#pragma omp parallel num_threads(omp_get_max_threads()) private(persona) shared(contador,tamano,cantidad)
 	{
 		for (int i = 0; i < cantidad; i++) {
 			if (contador > 0) {
@@ -32,14 +35,14 @@ void ClaseSimulador::llenarLista(double cantInfec, double infec, double rec, int
 			}
 #pragma omp critical 
 			{
-				persona.setPosicion(generarPosRandom(tamano);//Asigna una posicion random, se asegura de que no sea repetida
+				persona.setPosicion(generarPosRandom(tamano));//Asigna una posicion random, se asegura de que no sea repetida
 				if(persona.getEstado()==1){ 
 					poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second]=1;//Si la persona está enferma se marca en la matriz.
 				}else{
 					poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second]=0;//Se pone un cero para mostrar que esa posición está ocupada.
 				}
 				poblacion.push_back(persona);
-				//cout << "Estado: " << persona.getEstado() << " X: " << persona.getPosicion().first << "Y: " << persona.getPosicion().second << endl;
+				cout << "Estado: " << persona.getEstado() << " X: " << persona.getPosicion().first << "Y: " << persona.getPosicion().second << endl;
 			}
 		}
 	}
@@ -57,27 +60,27 @@ void ClaseSimulador::llenarLista(double cantInfec, double infec, double rec, int
 
 void ClaseSimulador::mover()
 {
-	pair<int,int> posAnt;
-	for(list<ClasePersona>::iterator it = poblacion.begin(); it != poblacion.end(); it++){
-		if(it->getPosicion().first==0 && it->getPosicion().second==0){ //Esquina Superior Izquierda
+	//pair<int,int> posAnt;
+	//for(list<ClasePersona>::iterator it = poblacion.begin(); it != poblacion.end(); it++){
+	//	if(it->getPosicion().first==0 && it->getPosicion().second==0){ //Esquina Superior Izquierda
 
-		}
-		if(it->getPosicion().first==0 && it->getPosicion().second==poblacionInfectada){ //Esquina Superior Derecha
+	//	}
+	//	if(it->getPosicion().first==0 && it->getPosicion().second==poblacionInfectada){ //Esquina Superior Derecha
 
-		}
-		if(it->getPosicion().first==poblacionInfectada.size()-1 && it->getPosicion().second==0){ //Esquina Inferior Izquierda
+	//	}
+	//	if(it->getPosicion().first==poblacionInfectada.size()-1 && it->getPosicion().second==0){ //Esquina Inferior Izquierda
 
-		}
-		if(){
-			
-		}
-		posAnt = it->getPosicion();
-		it->setPosicion(generarPosRandom(poblacionInfectada.size()));
-		if(it->getEstado()==1){
-			poblacionInfectada[posAnt.first][posAnt.second] -= 1;
-			poblacionInfectada[it->getPosicion().first][it->getPosicion().second] += 1;
-		}
-	}
+	//	}
+	//	if(){
+	//		
+	//	}
+	//	posAnt = it->getPosicion();
+	//	it->setPosicion(generarPosRandom(poblacionInfectada.size()));
+	//	if(it->getEstado()==1){
+	//		poblacionInfectada[posAnt.first][posAnt.second] -= 1;
+	//		poblacionInfectada[it->getPosicion().first][it->getPosicion().second] += 1;
+	//	}
+	//}
 }
 
 void ClaseSimulador::revisar(int contSem){
