@@ -13,7 +13,7 @@ ClaseSimulador::~ClaseSimulador()
 }
 
 
-void ClaseSimulador::llenarLista(double cantInfec, double infec, double rec, int tamano, int cantidad)
+void ClaseSimulador::llenarLista(int cantInfec, double infec, double rec, int tamano, int cantidad)
 {
 	poblacionInfectada.resize(tamano);
 	//poblacion.resize(cantidad);
@@ -260,25 +260,27 @@ void ClaseSimulador::mover()
 	}
 
 
-void ClaseSimulador::revisar(int contSem){
-	//int est;
-	//for(list<ClasePersona>::iterator it = poblacion[i][j].begin(); it != poblacion[i][j].end(); it++){
-	//	est = poblacion[i].getEstado();
-	//	if(est==1){
-	//		if(poblacion[i].semana<contSem){
-	//			curar(poblacion[i]);
-	//		}else{
-	//			poblacion[i].setEstado(2);
-	//			poblacionInfectada[poblacion[i].getPosicion().first][poblacion[i].getPosicion().second] -= 1;
-	//		}
-	//	}else if(est==0){
-	//		for(int i=0; i<poblacionInfectada[poblacion[i].getPosicion().first][poblacion[i].getPosicion().second]; i++){
-	//			if(infectar(poblacion[i])){
-	//				i = poblacionInfectada[poblacion[i].getPosicion().first][poblacion[i].getPosicion().second];
-	//			}
-	//		}
-	//	}
-	//}
+void ClaseSimulador::revisar(int cantSemana){ //Se muere a la semana 2
+	//revisar.todo("hágalo bien :D" + "plis");
+	
+#pragma omp parallel for num_threads(omp_get_max_threads()) 
+	for (int i = 0; i < poblacion.size(); i++) {
+		int c = 0;
+		if (poblacion[i].getEstado() == 0 && poblacionInfectada[poblacion[i].getPosicion().first][poblacion[i].getPosicion().second] > 0) { // Esta sano y hay infectaos
+			while (!infectar(poblacion[i]) && c < poblacionInfectada[poblacion[i].getPosicion().first][poblacion[i].getPosicion().second]) {
+				c++; //:D
+			}
+		}
+		else if(poblacion[i].getEstado() == 1){
+			if (poblacion[i].getSemana() == cantSemana) { //si llegó a la cita de la caja
+				poblacion[i].setEstado(3);
+			}
+			else {
+				curar(poblacion[i]);
+			}
+		}
+	}
+
 }
 
 bool ClaseSimulador::infectar(ClasePersona persona)
@@ -286,7 +288,7 @@ bool ClaseSimulador::infectar(ClasePersona persona)
 	double random = genRandom();
 	if (random <= persona.probaInfectibilidad) {
 		persona.setEstado(1);
-		persona.modSemana();
+		persona.modSemana(); // semana masmas
 		poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] += 1; 
 		return true;
 	}
@@ -295,16 +297,14 @@ bool ClaseSimulador::infectar(ClasePersona persona)
 	}
 }
 
-bool ClaseSimulador::curar(ClasePersona persona)
+void ClaseSimulador::curar(ClasePersona persona)
 {
 	double random = genRandom();
 	if (random <= persona.probaRecuperacion) {
 		persona.setEstado(2);
 		poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] -= 1;
-		return true;
 	}else {
-		persona.modSemana();
-		return false;
+		persona.modSemana(); //semanas másmás
 	}
 }
 
@@ -312,7 +312,7 @@ bool ClaseSimulador::curar(ClasePersona persona)
 
 
 double ClaseSimulador::genRandom() {
-	default_random_engine gen;
+	default_random_engine gen(time(0));
 	uniform_real_distribution<double> distribution(0,1);
 	return distribution(gen);
 }
