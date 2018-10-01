@@ -16,11 +16,9 @@ ClaseSimulador::~ClaseSimulador()
 void ClaseSimulador::llenarLista(double cantInfec, double infec, double rec, int tamano, int cantidad)
 {
 	poblacionInfectada.resize(tamano);
+	//poblacion.resize(cantidad);
 	for (int i = 0; i < tamano; i++) {
-		poblacionInfectada[i].resize(tamano);
-		for (int j = 0; j < tamano; j++) {
-				poblacionInfectada[i][j] = -1;
-		}
+		poblacionInfectada[i].resize(tamano,-1);
 	}
 	ClasePersona persona;
 	int contador = cantidad * (cantInfec / 100);//Cantidad de personas infectadas inicialmente
@@ -56,179 +54,168 @@ void ClaseSimulador::mover()
 {
 	default_random_engine gen;
 	int random;
-	list<ClasePersona> miLista;
 	int distribucion = poblacion.size() / omp_get_max_threads();
-	list<ClasePersona>::iterator personaAsignada = poblacion.begin();
-#pragma omp parallel num_threads(omp_get_max_threads()) private(random,miLista) shared(gen,personaAsignada,distribucion)
-	{
-	
-#pragma omp critical
-		{
-			for (int i = 0; i < distribucion;i++) {
-				miLista.push_back(*personaAsignada);
-				personaAsignada++;
-			}
-		}
 
-		for (list<ClasePersona>::iterator it = miLista.begin(); it != miLista.end(); it++) {
-			if (it->getPosicion().first == 0 && it->getPosicion().second == 0) { //Esquina Superior Izquierda
+#pragma omp parallel for num_threads(omp_get_max_threads()) private(random) shared(gen)
+	for (int i = 0; i < poblacion.size();i++){
+			if (poblacion[i].getPosicion().first == 0 && poblacion[i].getPosicion().second == 0) { //Esquina Superior Izquierda
 				uniform_int_distribution<int> distribution(0, 3);
 				random = distribution(gen);
 				if (random == 0) {//Derecha
 #pragma omp critical
-					derecha(*it);
+					derecha(poblacion[i]);
 				}
 				else if (random == 1) {//Abajo
 #pragma omp critical
-					abajo(*it);
+					abajo(poblacion[i]);
 				}
 				else { //Diagonal Abajo Derecha
 #pragma omp critical
-					diaDerAbajo(*it);
+					diaDerAbajo(poblacion[i]);
 				}
 			}
-			else if (it->getPosicion().first == 0 && it->getPosicion().second == poblacionInfectada.size() - 1) { //Esquina Superior Derecha
+			else if (poblacion[i].getPosicion().first == 0 && poblacion[i].getPosicion().second == poblacionInfectada.size() - 1) { //Esquina Superior Derecha
 				uniform_int_distribution<int> distribution(0, 3);
 				random = (int)distribution(gen);
 				if (random == 0) {//Izquierda
 #pragma omp critical
-					izquierda(*it);
+					izquierda(poblacion[i]);
 				}
 				else if (random == 1) {//Abajo
 #pragma omp critical
-					abajo(*it);
+					abajo(poblacion[i]);
 				}
 				else { //Diagonal Abajo Izquierda
 #pragma omp critical
-					diaIzqAbajo(*it);
+					diaIzqAbajo(poblacion[i]);
 				}
 			}
-			else if (it->getPosicion().first == poblacionInfectada.size() - 1 && it->getPosicion().second == 0) { //Esquina Inferior Izquierda
+			else if (poblacion[i].getPosicion().first == poblacionInfectada.size() - 1 && poblacion[i].getPosicion().second == 0) { //Esquina Inferior Izquierda
 				uniform_int_distribution<int> distribution(0, 3);
 				random = (int)distribution(gen);
 				if (random == 0) {//Derecha
 #pragma omp critical
-					derecha(*it);
+					derecha(poblacion[i]);
 				}
 				else if (random == 1) {//Arriba
 #pragma omp critical
-					arriba(*it);
+					arriba(poblacion[i]);
 				}
 				else { //Diagonal Arriba Derecha
 #pragma omp critical
-					diaDerArriba(*it);
+					diaDerArriba(poblacion[i]);
 				}
 			}
-			else if (it->getPosicion().first == poblacionInfectada.size() - 1 && it->getPosicion().second == poblacionInfectada.size() - 1) { //Esquina Inferior Derecha
+			else if (poblacion[i].getPosicion().first == poblacionInfectada.size() - 1 && poblacion[i].getPosicion().second == poblacionInfectada.size() - 1) { //Esquina Inferior Derecha
 				uniform_int_distribution<int> distribution(0, 3);
 				random = (int)distribution(gen);
 				if (random == 0) {//Izquierda
 #pragma omp critical
-					izquierda(*it);
+					izquierda(poblacion[i]);
 				}
 				else if (random == 1) {//Arriba
 #pragma omp critical
-					arriba(*it);
+					arriba(poblacion[i]);
 				}
 				else { //Diagonal Arriba Izquierda
 #pragma omp critical
-					diaIzqArriba(*it);
+					diaIzqArriba(poblacion[i]);
 				}
 			}
-			else if (it->getPosicion().first == 0) { //Izquierda
+			else if (poblacion[i].getPosicion().first == 0) { //Izquierda
 				uniform_int_distribution<int> distribution(0, 5);
 				random = (int)distribution(gen);
 				if (random == 0) {//Derecha
 #pragma omp critical
-					derecha(*it);
+					derecha(poblacion[i]);
 				}
 				else if (random == 1) {//Arriba
 #pragma omp critical
-					arriba(*it);
+					arriba(poblacion[i]);
 				}
 				else if (random == 2) {//Abajo
 #pragma omp critical
-					abajo(*it);
+					abajo(poblacion[i]);
 				}
 				else if (random == 3) {//Diagonal Arriba Derecha
 #pragma omp critical
-					diaDerArriba(*it);
+					diaDerArriba(poblacion[i]);
 				}
 				else {//Diagonal Abajo Derecha
 #pragma omp critical
-					diaDerAbajo(*it);
+					diaDerAbajo(poblacion[i]);
 				}
 			}
-			else if (it->getPosicion().second == 0) { //Arriba
+			else if (poblacion[i].getPosicion().second == 0) { //Arriba
 				uniform_int_distribution<int> distribution(0, 5);
 				random = (int)distribution(gen);
 				if (random == 0) {//Derecha
 #pragma omp critical
-					derecha(*it);
+					derecha(poblacion[i]);
 				}
 				else if (random == 1) {//Izquierda
 #pragma omp critical
-					izquierda(*it);
+					izquierda(poblacion[i]);
 				}
 				else if (random == 2) {//Abajo
 #pragma omp critical
-				abajo(*it);
+				abajo(poblacion[i]);
 				}
 				else if (random == 3) {//Diagonal Abajo Izquierda
 #pragma omp critical
-				diaIzqAbajo(*it);
+				diaIzqAbajo(poblacion[i]);
 				}
 				else {//Diagonal Abajo Derecha
 #pragma omp critical
-				diaDerAbajo(*it);
+				diaDerAbajo(poblacion[i]);
 				}
 			}
-			else if (it->getPosicion().first == poblacionInfectada.size() - 1) { //Derecha
+			else if (poblacion[i].getPosicion().first == poblacionInfectada.size() - 1) { //Derecha
 			uniform_int_distribution<int> distribution(0, 5);
 			random = (int)distribution(gen);
 			if (random == 0) {//Izquierda
 #pragma omp critical
-				izquierda(*it);
+				izquierda(poblacion[i]);
 			}
 			else if (random == 1) {//Arriba
 #pragma omp critical
-				arriba(*it);
+				arriba(poblacion[i]);
 			}
 			else if (random == 2) {//Abajo
 #pragma omp critical
-				abajo(*it);
+				abajo(poblacion[i]);
 			}
 			else if (random == 3) {//Diagonal Arriba Izquierda
 #pragma omp critical
-				diaIzqArriba(*it);
+				diaIzqArriba(poblacion[i]);
 			}
 			else {//Diagonal Abajo Izquierda
 #pragma omp critical
-				diaIzqAbajo(*it);
+				diaIzqAbajo(poblacion[i]);
 			}
 			}
-			else if (it->getPosicion().second == poblacionInfectada.size() - 1) { //Abajo
+			else if (poblacion[i].getPosicion().second == poblacionInfectada.size() - 1) { //Abajo
 			uniform_int_distribution<int> distribution(0, 5);
 			random = (int)distribution(gen);
 			if (random == 0) {//Derecha
 #pragma omp critical
-				derecha(*it);
+				derecha(poblacion[i]);
 			}
 			else if (random == 1) {//Arriba
 #pragma omp critical
-				arriba(*it);
+				arriba(poblacion[i]);
 			}
 			else if (random == 2) {//Izquierda
 #pragma omp critical
-				izquierda(*it);
+				izquierda(poblacion[i]);
 			}
 			else if (random == 3) {//Diagonal Arriba Derecha
 #pragma omp critical
-				diaDerArriba(*it);
+				diaDerArriba(poblacion[i]);
 			}
 			else {//Diagonal Arriba Izquierda
 #pragma omp critical
-				diaDerAbajo(*it);
+				diaDerAbajo(poblacion[i]);
 			}
 			}
 			else {
@@ -236,65 +223,58 @@ void ClaseSimulador::mover()
 			random = (int)distribution(gen);
 			if (random == 0) {//Arriba
 #pragma omp critical
-				arriba(*it);
+				arriba(poblacion[i]);
 			}
 			else if (random == 1) {//Abajo
 #pragma omp critical
-				abajo(*it);
+				abajo(poblacion[i]);
 			}
 			else if (random == 2) {//Izquierda
 #pragma omp critical
-				izquierda(*it);
+				izquierda(poblacion[i]);
 			}
 			else if (random == 3) {//Derecha
 #pragma omp critical
-				derecha(*it);
+				derecha(poblacion[i]);
 			}
 			else if (random == 4) {//Diagonal Abajo Derecha
 #pragma omp critical
-				diaDerAbajo(*it);
+				diaDerAbajo(poblacion[i]);
 			}
 			else if (random == 5) {//Diagonal Abajo Izquierda
 #pragma omp critical
-				diaIzqAbajo(*it);
+				diaIzqAbajo(poblacion[i]);
 			}
 			else if (random == 6) {//Diagonal Arriba Derecha
 #pragma omp critical
-				diaDerArriba(*it);
+				diaDerArriba(poblacion[i]);
 			}
 			else {//Diagonal Arriba Izquierda
 #pragma omp critical
-				diaDerAbajo(*it);
+				diaDerAbajo(poblacion[i]);
 			}
 			}
-		}
-
-#pragma omp single
-		cout << "Estos son despues de mover: " << endl;
-
-		for (list<ClasePersona>::iterator it = miLista.begin(); it != miLista.end(); it++) {
 #pragma omp critical
-			cout << "Estado: " << it->getEstado() << " X: " << it->getPosicion().first << "Y: " << it->getPosicion().second << "Impreso por el hilo: "<<omp_get_thread_num<<endl;
+			cout << "Estado: " << poblacion[i].getEstado() << " X: " << poblacion[i].getPosicion().first << "Y: " << poblacion[i].getPosicion().second << "Impreso por el hilo: " << omp_get_thread_num << endl;
 		}
 	}
 
-}
 
 void ClaseSimulador::revisar(int contSem){
 	//int est;
 	//for(list<ClasePersona>::iterator it = poblacion[i][j].begin(); it != poblacion[i][j].end(); it++){
-	//	est = it->getEstado();
+	//	est = poblacion[i].getEstado();
 	//	if(est==1){
-	//		if(it->semana<contSem){
-	//			curar(*it);
+	//		if(poblacion[i].semana<contSem){
+	//			curar(poblacion[i]);
 	//		}else{
-	//			it->setEstado(2);
-	//			poblacionInfectada[it->getPosicion().first][it->getPosicion().second] -= 1;
+	//			poblacion[i].setEstado(2);
+	//			poblacionInfectada[poblacion[i].getPosicion().first][poblacion[i].getPosicion().second] -= 1;
 	//		}
 	//	}else if(est==0){
-	//		for(int i=0; i<poblacionInfectada[it->getPosicion().first][it->getPosicion().second]; i++){
-	//			if(infectar(*it)){
-	//				i = poblacionInfectada[it->getPosicion().first][it->getPosicion().second];
+	//		for(int i=0; i<poblacionInfectada[poblacion[i].getPosicion().first][poblacion[i].getPosicion().second]; i++){
+	//			if(infectar(poblacion[i])){
+	//				i = poblacionInfectada[poblacion[i].getPosicion().first][poblacion[i].getPosicion().second];
 	//			}
 	//		}
 	//	}
@@ -337,23 +317,13 @@ double ClaseSimulador::genRandom() {
 	return distribution(gen);
 }
 
-int ClaseSimulador::contInfectados(list<ClasePersona> lista)
-{
-	int c = 0;
-	for (list<ClasePersona>::iterator it = lista.begin(); it != lista.end(); it++) {
-		if (it->estado == 1) {
-			c++;
-		}
-	}
-	return c;
-}
 
 /*int myints[] = {75,23,65,42,13};
   std::list<int> mylist (myints,myints+5);
 
   std::cout << "mylist contains:";
   for (std::list<int>::iterator it=mylist.begin(); it != mylist.end(); ++it)
-    std::cout << ' ' << *it;
+    std::cout << ' ' << poblacion[i];
 
   std::cout << '\n';
 

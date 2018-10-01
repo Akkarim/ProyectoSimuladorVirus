@@ -88,10 +88,9 @@ public:
 private:
 
 	double genRandom();
-	int contInfectados(list<ClasePersona> lista);
 	pair<int, int> posAnt, posAux;
 	vector<vector<int>> poblacionInfectada; //Matriz con la cantidad de enfermos por posición
-	list<ClasePersona> poblacion; //Lista con todas las personas.
+	vector<ClasePersona> poblacion; //Lista con todas las personas.
 };
 
 //End of file with a Cow (Bettsy)
