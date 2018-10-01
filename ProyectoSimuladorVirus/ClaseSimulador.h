@@ -44,12 +44,52 @@ public:
 	//MOD:
 	pair<int,int> generarPosRandom(int tam);
 
-	double genRandom();
+	//EFE: Cambia la pocision de una persona hacia arriba
+	//REQ: Persona valida
+	//MOD: Matriz de Poblacion Infectada y la posicion de la persona
+	void arriba(ClasePersona persona);
 
-	int contInfectados(list<ClasePersona> lista);
+	//EFE: Cambia la pocision de una persona hacia abajo
+	//REQ: Persona valida
+	//MOD: Matriz de Poblacion Infectada y la posicion de la persona
+	void abajo(ClasePersona persona);
 
-private:
+	//EFE: Cambia la pocision de una persona hacia la derecha
+	//REQ: Persona valida
+	//MOD: Matriz de Poblacion Infectada y la posicion de la persona
+	void derecha(ClasePersona persona);
+
+	//EFE: Cambia la pocision de una persona hacia la izquierda
+	//REQ: Persona valida
+	//MOD: Matriz de Poblacion Infectada y la posicion de la persona
+	void izquierda(ClasePersona persona);
+
+	//EFE: Cambia la pocision de una persona hacia la diagonal inferior derecha
+	//REQ: Persona valida
+	//MOD: Matriz de Poblacion Infectada y la posicion de la persona
+	void diaDerAbajo(ClasePersona persona);
+
+	//EFE: Cambia la pocision de una persona hacia la diagonal superior derecha
+	//REQ: Persona valida
+	//MOD: Matriz de Poblacion Infectada y la posicion de la persona
+	void diaDerArriba(ClasePersona persona);
+
+	//EFE: Cambia la pocision de una persona hacia la diagonal inferior izquierda
+	//REQ: Persona valida
+	//MOD: Matriz de Poblacion Infectada y la posicion de la persona
+	void diaIzqAbajo(ClasePersona persona);
+
+	//EFE: Cambia la pocision de una persona hacia la diagonal superior derecha
+	//REQ: Persona valida
+	//MOD: Matriz de Poblacion Infectada y la posicion de la persona
+	void diaIzqArriba(ClasePersona persona);
+
 	
+private:
+
+	double genRandom();
+	int contInfectados(list<ClasePersona> lista);
+	pair<int, int> posAnt, posAux;
 	vector<vector<int>> poblacionInfectada; //Matriz con la cantidad de enfermos por posición
 	list<ClasePersona> poblacion; //Lista con todas las personas.
 };

@@ -18,6 +18,9 @@ void ClaseSimulador::llenarLista(double cantInfec, double infec, double rec, int
 	poblacionInfectada.resize(tamano);
 	for (int i = 0; i < tamano; i++) {
 		poblacionInfectada[i].resize(tamano);
+		for (int j = 0; j < tamano; j++) {
+				poblacionInfectada[i][j] = -1;
+		}
 	}
 	ClasePersona persona;
 	persona.setProbaInf(infec);
@@ -46,41 +49,175 @@ void ClaseSimulador::llenarLista(double cantInfec, double infec, double rec, int
 			}
 		}
 	}
-    /*Llena la matriz con ceros en donde no haya infectados*/
-	for (int i = 0; i < tamano; i++) {
-		poblacionInfectada[i].resize(tamano);
-		for (int j = 0; j < tamano; j++) {
-			if(poblacionInfectada[i][j] != 1 && poblacionInfectada[i][j] != 0){
-				poblacionInfectada[i][j] = 0;
-			}
-			
-		}
-	}
 }
 
 void ClaseSimulador::mover()
 {
-	//pair<int,int> posAnt;
-	//for(list<ClasePersona>::iterator it = poblacion.begin(); it != poblacion.end(); it++){
-	//	if(it->getPosicion().first==0 && it->getPosicion().second==0){ //Esquina Superior Izquierda
+	default_random_engine gen;
+	int random;
+	for(list<ClasePersona>::iterator it = poblacion.begin(); it != poblacion.end(); it++){
+		if(it->getPosicion().first==0 && it->getPosicion().second==0){ //Esquina Superior Izquierda
+			uniform_int_distribution<int> distribution(0, 3);
+			random = distribution(gen);
+			if (random == 0) {//Derecha
+				derecha(*it);
+			}
+			else if (random == 1) {//Abajo
+				abajo(*it);
+			}
+			else { //Diagonal Abajo Derecha
+				diaDerAbajo(*it);
+			}
+		}
+		else if(it->getPosicion().first==0 && it->getPosicion().second==poblacionInfectada.size()-1){ //Esquina Superior Derecha
+			uniform_int_distribution<int> distribution(0, 3);
+			random = (int)distribution(gen);
+			if (random == 0) {//Izquierda
+				izquierda(*it);
+			}
+			else if (random == 1) {//Abajo
+				abajo(*it);
+			}
+			else { //Diagonal Abajo Izquierda
+				diaIzqAbajo(*it);
+			}
+		}
+		else if(it->getPosicion().first==poblacionInfectada.size()-1 && it->getPosicion().second==0){ //Esquina Inferior Izquierda
+			uniform_int_distribution<int> distribution(0, 3);
+			random = (int)distribution(gen);
+			if (random == 0) {//Derecha
+				derecha(*it);
+			}
+			else if (random == 1) {//Arriba
+				arriba(*it);
+			}
+			else { //Diagonal Arriba Derecha
+				diaDerArriba(*it);
+			}
+		}
+		else if(it->getPosicion().first == poblacionInfectada.size()-1 && it->getPosicion().second == poblacionInfectada.size()-1){ //Esquina Inferior Derecha
+			uniform_int_distribution<int> distribution(0, 3);
+			random = (int)distribution(gen);
+			if (random == 0) {//Izquierda
+				izquierda(*it);
+			}
+			else if (random == 1) {//Arriba
+				arriba(*it);
+			}
+			else { //Diagonal Arriba Izquierda 
+				diaIzqArriba(*it);
+			}
+		}
+		else if (it->getPosicion().first==0) { //Izquierda
+			uniform_int_distribution<int> distribution(0, 5);
+			random = (int)distribution(gen);
+			if (random == 0) {//Derecha
+				derecha(*it);
+			}
+			else if (random == 1) {//Arriba
+				arriba(*it);
+			}
+			else if(random == 2){//Abajo
+				abajo(*it);
+			}
+			else if (random == 3) {//Diagonal Arriba Derecha
+				diaDerArriba(*it);
+			}
+			else {//Diagonal Abajo Derecha
+				diaDerAbajo(*it);
+			}
+		}
+		else if (it->getPosicion().second == 0) { //Arriba
+			uniform_int_distribution<int> distribution(0, 5);
+			random = (int)distribution(gen);
+			if (random == 0) {//Derecha
+				derecha(*it);
+			}
+			else if (random == 1) {//Izquierda
+				izquierda(*it);
+			}
+			else if (random == 2) {//Abajo
+				abajo(*it);
+			}
+			else if (random == 3) {//Diagonal Abajo Izquierda
+				diaIzqAbajo(*it);
+			}
+			else {//Diagonal Abajo Derecha
+				diaDerAbajo(*it);
+			}
+		}
+		else if (it->getPosicion().first == poblacionInfectada.size()-1) { //Derecha
+			uniform_int_distribution<int> distribution(0, 5);
+			random = (int)distribution(gen);
+			if (random == 0) {//Izquierda
+				izquierda(*it);
+			}
+			else if (random == 1) {//Arriba
+				arriba(*it);
+			}
+			else if (random == 2) {//Abajo
+				abajo(*it);
+			}
+			else if (random == 3) {//Diagonal Arriba Izquierda
+				diaIzqArriba(*it);
+			}
+			else {//Diagonal Abajo Izquierda
+				diaIzqAbajo(*it);
+			}
+		}
+		else if (it->getPosicion().second == poblacionInfectada.size() - 1) { //Abajo
+			uniform_int_distribution<int> distribution(0, 5);
+			random = (int)distribution(gen);
+			if (random == 0) {//Derecha
+				derecha(*it);
+			}
+			else if (random == 1) {//Arriba
+				arriba(*it);
+			}
+			else if (random == 2) {//Izquierda
+				izquierda(*it);
+			}
+			else if (random == 3) {//Diagonal Arriba Derecha
+				diaDerArriba(*it);
+			}
+			else {//Diagonal Arriba Izquierda
+				diaDerAbajo(*it);
+			}
+		}
+		else {
+			uniform_int_distribution<int> distribution(0, 8);
+			random = (int)distribution(gen);
+			if (random == 0) {//Arriba
+				arriba(*it);
+			}
+			else if (random == 1) {//Abajo
+				abajo(*it);
+			}
+			else if (random == 2) {//Izquierda
+				izquierda(*it);
+			}
+			else if (random == 3) {//Derecha
+				derecha(*it);
+			}
+			else if (random == 4){//Diagonal Abajo Derecha
+				diaDerAbajo(*it);
+			}
+			else if (random == 5){//Diagonal Abajo Izquierda
+				diaIzqAbajo(*it);
+			}
+			else if (random == 6){//Diagonal Arriba Derecha
+				diaDerArriba(*it);
+			}
+			else {//Diagonal Arriba Izquierda
+				diaDerAbajo(*it);
+			}
+		}
+	}
+	cout << "Estos son despues de mover: " << endl;
+	for (list<ClasePersona>::iterator it = poblacion.begin(); it != poblacion.end(); it++) {
+		cout << "Estado: " << it->getEstado() << " X: " << it->getPosicion().first << "Y: " << it->getPosicion().second << endl;
+	}
 
-	//	}
-	//	if(it->getPosicion().first==0 && it->getPosicion().second==poblacionInfectada){ //Esquina Superior Derecha
-
-	//	}
-	//	if(it->getPosicion().first==poblacionInfectada.size()-1 && it->getPosicion().second==0){ //Esquina Inferior Izquierda
-
-	//	}
-	//	if(){
-	//		
-	//	}
-	//	posAnt = it->getPosicion();
-	//	it->setPosicion(generarPosRandom(poblacionInfectada.size()));
-	//	if(it->getEstado()==1){
-	//		poblacionInfectada[posAnt.first][posAnt.second] -= 1;
-	//		poblacionInfectada[it->getPosicion().first][it->getPosicion().second] += 1;
-	//	}
-	//}
 }
 
 void ClaseSimulador::revisar(int contSem){
@@ -132,6 +269,8 @@ bool ClaseSimulador::curar(ClasePersona persona)
 }
 
 
+
+
 double ClaseSimulador::genRandom() {
 	default_random_engine gen;
 	uniform_real_distribution<double> distribution(0,1);
@@ -171,6 +310,142 @@ pair<int, int> ClaseSimulador::generarPosRandom(int tam)
 	} while (poblacionInfectada[pos.first][pos.second]==0||poblacionInfectada[pos.first][pos.second]==1);
 	
 	return pos;
+}
+
+void ClaseSimulador::arriba(ClasePersona persona){
+	posAnt = persona.getPosicion();
+	posAux.first = persona.getPosicion().first + 1;
+	posAux.second = persona.getPosicion().second;
+	persona.setPosicion(posAux);
+	if (persona.getEstado() == 1) {
+		if (poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] == -1) {
+			poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] = 1;
+			poblacionInfectada[posAnt.first][posAnt.second] -= 1;
+		}
+		else {
+			poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] += 1;
+			poblacionInfectada[posAnt.first][posAnt.second] -= 1;
+		}
+	}
+}
+
+void ClaseSimulador::abajo(ClasePersona persona){
+	posAnt = persona.getPosicion();
+	posAux.first = persona.getPosicion().first - 1;
+	posAux.second = persona.getPosicion().second;
+	persona.setPosicion(posAux);
+	if (persona.getEstado() == 1) {
+		if (poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] == -1) {
+			poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] = 1;
+			poblacionInfectada[posAnt.first][posAnt.second] -= 1;
+		}
+		else {
+			poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] += 1;
+			poblacionInfectada[posAnt.first][posAnt.second] -= 1;
+		}
+	}
+}
+
+void ClaseSimulador::derecha(ClasePersona persona){
+	posAnt = persona.getPosicion();
+	posAux.first = persona.getPosicion().first;
+	posAux.second = persona.getPosicion().second + 1;
+	persona.setPosicion(posAux);
+	if (persona.getEstado() == 1) {
+		if (poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] == -1) {
+			poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] = 1;
+			poblacionInfectada[posAnt.first][posAnt.second] -= 1;
+		}
+		else {
+			poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] += 1;
+			poblacionInfectada[posAnt.first][posAnt.second] -= 1;
+		}
+	}
+}
+
+void ClaseSimulador::izquierda(ClasePersona persona){
+	posAnt = persona.getPosicion();
+	posAux.first = persona.getPosicion().first;
+	posAux.second = persona.getPosicion().second - 1;
+	persona.setPosicion(posAux);
+	if (persona.getEstado() == 1) {
+		if (poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] == -1) {
+			poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] = 1;
+			poblacionInfectada[posAnt.first][posAnt.second] -= 1;
+		}
+		else {
+			poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] += 1;
+			poblacionInfectada[posAnt.first][posAnt.second] -= 1;
+		}
+	}
+}
+
+void ClaseSimulador::diaDerAbajo(ClasePersona persona){
+	posAnt = persona.getPosicion();
+	posAux.first = persona.getPosicion().first + 1;
+	posAux.second = persona.getPosicion().second - 1;
+	persona.setPosicion(posAux);
+	if (persona.getEstado() == 1) {
+		if (poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] == -1) {
+			poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] = 1;
+			poblacionInfectada[posAnt.first][posAnt.second] -= 1;
+		}
+		else {
+			poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] += 1;
+			poblacionInfectada[posAnt.first][posAnt.second] -= 1;
+		}
+	}
+}
+
+void ClaseSimulador::diaDerArriba(ClasePersona persona){
+	posAnt = persona.getPosicion();
+	posAux.first = persona.getPosicion().first - 1;
+	posAux.second = persona.getPosicion().second + 1;
+	persona.setPosicion(posAux);
+	if (persona.getEstado() == 1) {
+		if (poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] == -1) {
+			poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] = 1;
+			poblacionInfectada[posAnt.first][posAnt.second] -= 1;
+		}
+		else {
+			poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] += 1;
+			poblacionInfectada[posAnt.first][posAnt.second] -= 1;
+		}
+	}
+}
+
+void ClaseSimulador::diaIzqAbajo(ClasePersona persona){
+	posAnt = persona.getPosicion();
+	posAux.first = persona.getPosicion().first + 1;
+	posAux.second = persona.getPosicion().second + 1;
+	persona.setPosicion(posAux);
+	if (persona.getEstado() == 1) {
+		if (poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] == -1) {
+			poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] = 1;
+			poblacionInfectada[posAnt.first][posAnt.second] -= 1;
+		}
+		else {
+			poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] += 1;
+			poblacionInfectada[posAnt.first][posAnt.second] -= 1;
+		}
+	}
+}
+
+void ClaseSimulador::diaIzqArriba(ClasePersona persona){
+	posAnt = persona.getPosicion();
+	posAux.first = persona.getPosicion().first - 1;
+	posAux.second = persona.getPosicion().second - 1;
+	persona.setPosicion(posAux);
+	if (persona.getEstado() == 1) {
+		if (poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] == -1) {
+			poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] = 1;
+			poblacionInfectada[posAnt.first][posAnt.second] -= 1;
+		}
+		else {
+			poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] += 1;
+			poblacionInfectada[posAnt.first][posAnt.second] -= 1;
+		}
+	}
 }
 
 //End of file with a Cow (Bettsy)
