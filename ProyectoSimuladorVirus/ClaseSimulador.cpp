@@ -56,10 +56,10 @@ void ClaseSimulador::mover()
 	int random;
 	int distribucion = poblacion.size() / omp_get_max_threads();
 
-#pragma omp parallel for num_threads(omp_get_max_threads()) private(random) shared(gen)
+#pragma omp parallel for num_threads(1) private(random) shared(gen)
 	for (int i = 0; i < poblacion.size();i++){
 			if (poblacion[i].getPosicion().first == 0 && poblacion[i].getPosicion().second == 0) { //Esquina Superior Izquierda
-				uniform_int_distribution<int> distribution(0, 3);
+				uniform_int_distribution<int> distribution(0, 2);
 				random = distribution(gen);
 				if (random == 0) {//Derecha
 #pragma omp critical
@@ -69,13 +69,13 @@ void ClaseSimulador::mover()
 #pragma omp critical
 					abajo(poblacion[i]);
 				}
-				else { //Diagonal Abajo Derecha
+				else if (random == 2) { //Diagonal Abajo Derecha
 #pragma omp critical
 					diaDerAbajo(poblacion[i]);
 				}
 			}
 			else if (poblacion[i].getPosicion().first == 0 && poblacion[i].getPosicion().second == poblacionInfectada.size() - 1) { //Esquina Superior Derecha
-				uniform_int_distribution<int> distribution(0, 3);
+				uniform_int_distribution<int> distribution(0, 2);
 				random = (int)distribution(gen);
 				if (random == 0) {//Izquierda
 #pragma omp critical
@@ -85,13 +85,13 @@ void ClaseSimulador::mover()
 #pragma omp critical
 					abajo(poblacion[i]);
 				}
-				else { //Diagonal Abajo Izquierda
+				else if (random == 2) { //Diagonal Abajo Izquierda
 #pragma omp critical
 					diaIzqAbajo(poblacion[i]);
 				}
 			}
 			else if (poblacion[i].getPosicion().first == poblacionInfectada.size() - 1 && poblacion[i].getPosicion().second == 0) { //Esquina Inferior Izquierda
-				uniform_int_distribution<int> distribution(0, 3);
+				uniform_int_distribution<int> distribution(0, 2);
 				random = (int)distribution(gen);
 				if (random == 0) {//Derecha
 #pragma omp critical
@@ -107,7 +107,7 @@ void ClaseSimulador::mover()
 				}
 			}
 			else if (poblacion[i].getPosicion().first == poblacionInfectada.size() - 1 && poblacion[i].getPosicion().second == poblacionInfectada.size() - 1) { //Esquina Inferior Derecha
-				uniform_int_distribution<int> distribution(0, 3);
+				uniform_int_distribution<int> distribution(0, 2);
 				random = (int)distribution(gen);
 				if (random == 0) {//Izquierda
 #pragma omp critical
@@ -117,37 +117,13 @@ void ClaseSimulador::mover()
 #pragma omp critical
 					arriba(poblacion[i]);
 				}
-				else { //Diagonal Arriba Izquierda
+				else if (random == 2) { //Diagonal Arriba Izquierda
 #pragma omp critical
 					diaIzqArriba(poblacion[i]);
 				}
 			}
-			else if (poblacion[i].getPosicion().first == 0) { //Izquierda
-				uniform_int_distribution<int> distribution(0, 5);
-				random = (int)distribution(gen);
-				if (random == 0) {//Derecha
-#pragma omp critical
-					derecha(poblacion[i]);
-				}
-				else if (random == 1) {//Arriba
-#pragma omp critical
-					arriba(poblacion[i]);
-				}
-				else if (random == 2) {//Abajo
-#pragma omp critical
-					abajo(poblacion[i]);
-				}
-				else if (random == 3) {//Diagonal Arriba Derecha
-#pragma omp critical
-					diaDerArriba(poblacion[i]);
-				}
-				else {//Diagonal Abajo Derecha
-#pragma omp critical
-					diaDerAbajo(poblacion[i]);
-				}
-			}
-			else if (poblacion[i].getPosicion().second == 0) { //Arriba
-				uniform_int_distribution<int> distribution(0, 5);
+			else if (poblacion[i].getPosicion().first == 0) { //Arriba
+				uniform_int_distribution<int> distribution(0, 4);
 				random = (int)distribution(gen);
 				if (random == 0) {//Derecha
 #pragma omp critical
@@ -159,19 +135,43 @@ void ClaseSimulador::mover()
 				}
 				else if (random == 2) {//Abajo
 #pragma omp critical
-				abajo(poblacion[i]);
+					abajo(poblacion[i]);
 				}
 				else if (random == 3) {//Diagonal Abajo Izquierda
 #pragma omp critical
-				diaIzqAbajo(poblacion[i]);
+					diaIzqAbajo(poblacion[i]);
+				}
+				else if (random == 4) {//Diagonal Abajo Derecha
+#pragma omp critical
+					diaDerAbajo(poblacion[i]);
+				}
+			}
+			else if (poblacion[i].getPosicion().second == 0) { //Izquierda
+				uniform_int_distribution<int> distribution(0, 4);
+				random = (int)distribution(gen);
+				if (random == 0) {//Derecha
+#pragma omp critical
+					derecha(poblacion[i]);
+				}
+				else if (random == 1) {//Arriba
+#pragma omp critical
+					arriba(poblacion[i]);
+				}
+				else if (random == 2) {//Abajo
+#pragma omp critical
+				abajo(poblacion[i]);
+				}
+				else if (random == 3) {//Diagonal Arriba Derecha
+#pragma omp critical
+				diaDerArriba(poblacion[i]);
 				}
 				else {//Diagonal Abajo Derecha
 #pragma omp critical
 				diaDerAbajo(poblacion[i]);
 				}
 			}
-			else if (poblacion[i].getPosicion().first == poblacionInfectada.size() - 1) { //Derecha
-			uniform_int_distribution<int> distribution(0, 5);
+			else if (poblacion[i].getPosicion().first == poblacionInfectada.size() - 1) { //Abajo
+			uniform_int_distribution<int> distribution(0, 4);
 			random = (int)distribution(gen);
 			if (random == 0) {//Izquierda
 #pragma omp critical
@@ -181,25 +181,25 @@ void ClaseSimulador::mover()
 #pragma omp critical
 				arriba(poblacion[i]);
 			}
-			else if (random == 2) {//Abajo
+			else if (random == 2) {//Derecha
 #pragma omp critical
-				abajo(poblacion[i]);
+				derecha(poblacion[i]);
 			}
 			else if (random == 3) {//Diagonal Arriba Izquierda
 #pragma omp critical
 				diaIzqArriba(poblacion[i]);
 			}
-			else {//Diagonal Abajo Izquierda
+			else {//Diagonal Arriba Derecha
 #pragma omp critical
-				diaIzqAbajo(poblacion[i]);
+				diaDerArriba(poblacion[i]);
 			}
 			}
-			else if (poblacion[i].getPosicion().second == poblacionInfectada.size() - 1) { //Abajo
-			uniform_int_distribution<int> distribution(0, 5);
+			else if (poblacion[i].getPosicion().second == poblacionInfectada.size() - 1) { //Derecha
+			uniform_int_distribution<int> distribution(0, 4);
 			random = (int)distribution(gen);
-			if (random == 0) {//Derecha
+			if (random == 0) {//Abajo
 #pragma omp critical
-				derecha(poblacion[i]);
+				abajo(poblacion[i]);
 			}
 			else if (random == 1) {//Arriba
 #pragma omp critical
@@ -209,17 +209,17 @@ void ClaseSimulador::mover()
 #pragma omp critical
 				izquierda(poblacion[i]);
 			}
-			else if (random == 3) {//Diagonal Arriba Derecha
+			else if (random == 3) {//Diagonal Abajo izquierda
 #pragma omp critical
-				diaDerArriba(poblacion[i]);
+				diaIzqAbajo(poblacion[i]);
 			}
 			else {//Diagonal Arriba Izquierda
 #pragma omp critical
-				diaDerAbajo(poblacion[i]);
+				diaIzqArriba(poblacion[i]);
 			}
 			}
 			else {
-			uniform_int_distribution<int> distribution(0, 8);
+			uniform_int_distribution<int> distribution(0, 7);
 			random = (int)distribution(gen);
 			if (random == 0) {//Arriba
 #pragma omp critical
@@ -344,8 +344,8 @@ pair<int, int> ClaseSimulador::generarPosRandom(int tam)
 
 void ClaseSimulador::arriba(ClasePersona &persona){
 	posAnt = persona.getPosicion();
-	posAux.first = persona.getPosicion().first + 1;
-	posAux.second = persona.getPosicion().second;
+	posAux.first = persona.getPosicion().first;
+	posAux.second = persona.getPosicion().second-1;
 	persona.setPosicion(posAux);
 	if (persona.getEstado() == 1) {
 		if (poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] == -1) {
@@ -361,8 +361,8 @@ void ClaseSimulador::arriba(ClasePersona &persona){
 
 void ClaseSimulador::abajo(ClasePersona &persona){
 	posAnt = persona.getPosicion();
-	posAux.first = persona.getPosicion().first - 1;
-	posAux.second = persona.getPosicion().second;
+	posAux.first = persona.getPosicion().first;
+	posAux.second = persona.getPosicion().second+1;
 	persona.setPosicion(posAux);
 	if (persona.getEstado() == 1) {
 		if (poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] == -1) {
@@ -378,8 +378,8 @@ void ClaseSimulador::abajo(ClasePersona &persona){
 
 void ClaseSimulador::derecha(ClasePersona &persona){
 	posAnt = persona.getPosicion();
-	posAux.first = persona.getPosicion().first;
-	posAux.second = persona.getPosicion().second + 1;
+	posAux.first = persona.getPosicion().first + 1;
+	posAux.second = persona.getPosicion().second;
 	persona.setPosicion(posAux);
 	if (persona.getEstado() == 1) {
 		if (poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] == -1) {
@@ -395,8 +395,8 @@ void ClaseSimulador::derecha(ClasePersona &persona){
 
 void ClaseSimulador::izquierda(ClasePersona &persona){
 	posAnt = persona.getPosicion();
-	posAux.first = persona.getPosicion().first;
-	posAux.second = persona.getPosicion().second - 1;
+	posAux.first = persona.getPosicion().first - 1;
+	posAux.second = persona.getPosicion().second;
 	persona.setPosicion(posAux);
 	if (persona.getEstado() == 1) {
 		if (poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] == -1) {
@@ -413,7 +413,7 @@ void ClaseSimulador::izquierda(ClasePersona &persona){
 void ClaseSimulador::diaDerAbajo(ClasePersona &persona){
 	posAnt = persona.getPosicion();
 	posAux.first = persona.getPosicion().first + 1;
-	posAux.second = persona.getPosicion().second - 1;
+	posAux.second = persona.getPosicion().second + 1;
 	persona.setPosicion(posAux);
 	if (persona.getEstado() == 1) {
 		if (poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] == -1) {
@@ -429,8 +429,8 @@ void ClaseSimulador::diaDerAbajo(ClasePersona &persona){
 
 void ClaseSimulador::diaDerArriba(ClasePersona &persona){
 	posAnt = persona.getPosicion();
-	posAux.first = persona.getPosicion().first - 1;
-	posAux.second = persona.getPosicion().second + 1;
+	posAux.first = persona.getPosicion().first + 1;
+	posAux.second = persona.getPosicion().second - 1;
 	persona.setPosicion(posAux);
 	if (persona.getEstado() == 1) {
 		if (poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] == -1) {
@@ -446,7 +446,7 @@ void ClaseSimulador::diaDerArriba(ClasePersona &persona){
 
 void ClaseSimulador::diaIzqAbajo(ClasePersona &persona){
 	posAnt = persona.getPosicion();
-	posAux.first = persona.getPosicion().first + 1;
+	posAux.first = persona.getPosicion().first - 1;
 	posAux.second = persona.getPosicion().second + 1;
 	persona.setPosicion(posAux);
 	if (persona.getEstado() == 1) {

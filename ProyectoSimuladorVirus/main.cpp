@@ -64,11 +64,11 @@ int main(int argc, char* argv[]) {
 	ClaseSimulador simulador;
 	ClasePersona pipol;
 
-	simulador.llenarLista(10, 65, 75, 35, 150);
+	simulador.llenarLista(10, 65, 75, 5, 10);
 
-	for (int i = 0; i < 170; i++) {
+	for (int i = 0; i < 1; i++) {
 		simulador.mover();
-		simulador.revisar(20);
+		//simulador.revisar(20);
 	}
 
 
