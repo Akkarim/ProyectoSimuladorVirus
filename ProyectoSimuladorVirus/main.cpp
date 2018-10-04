@@ -66,7 +66,7 @@ int main(int argc, char* argv[]) {
 
 	simulador.llenarLista(10, 65, 75, 5, 10);
 
-	for (int i = 0; i < 1; i++) {
+	for (int i = 0; i < 20; i++) {
 		simulador.mover();
 		//simulador.revisar(20);
 	}

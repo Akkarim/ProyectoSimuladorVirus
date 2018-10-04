@@ -344,8 +344,8 @@ pair<int, int> ClaseSimulador::generarPosRandom(int tam)
 
 void ClaseSimulador::arriba(ClasePersona &persona){
 	posAnt = persona.getPosicion();
-	posAux.first = persona.getPosicion().first;
-	posAux.second = persona.getPosicion().second-1;
+	posAux.first = persona.getPosicion().first-1;
+	posAux.second = persona.getPosicion().second;
 	persona.setPosicion(posAux);
 	if (persona.getEstado() == 1) {
 		if (poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] == -1) {
@@ -360,6 +360,23 @@ void ClaseSimulador::arriba(ClasePersona &persona){
 }
 
 void ClaseSimulador::abajo(ClasePersona &persona){
+	posAnt = persona.getPosicion();
+	posAux.first = persona.getPosicion().first+1;
+	posAux.second = persona.getPosicion().second;
+	persona.setPosicion(posAux);
+	if (persona.getEstado() == 1) {
+		if (poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] == -1) {
+			poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] = 1;
+			poblacionInfectada[posAnt.first][posAnt.second] -= 1;
+		}
+		else {
+			poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] += 1;
+			poblacionInfectada[posAnt.first][posAnt.second] -= 1;
+		}
+	}
+}
+
+void ClaseSimulador::derecha(ClasePersona &persona){
 	posAnt = persona.getPosicion();
 	posAux.first = persona.getPosicion().first;
 	posAux.second = persona.getPosicion().second+1;
@@ -376,27 +393,10 @@ void ClaseSimulador::abajo(ClasePersona &persona){
 	}
 }
 
-void ClaseSimulador::derecha(ClasePersona &persona){
-	posAnt = persona.getPosicion();
-	posAux.first = persona.getPosicion().first + 1;
-	posAux.second = persona.getPosicion().second;
-	persona.setPosicion(posAux);
-	if (persona.getEstado() == 1) {
-		if (poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] == -1) {
-			poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] = 1;
-			poblacionInfectada[posAnt.first][posAnt.second] -= 1;
-		}
-		else {
-			poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] += 1;
-			poblacionInfectada[posAnt.first][posAnt.second] -= 1;
-		}
-	}
-}
-
 void ClaseSimulador::izquierda(ClasePersona &persona){
 	posAnt = persona.getPosicion();
-	posAux.first = persona.getPosicion().first - 1;
-	posAux.second = persona.getPosicion().second;
+	posAux.first = persona.getPosicion().first;
+	posAux.second = persona.getPosicion().second-1;
 	persona.setPosicion(posAux);
 	if (persona.getEstado() == 1) {
 		if (poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] == -1) {
@@ -429,8 +429,8 @@ void ClaseSimulador::diaDerAbajo(ClasePersona &persona){
 
 void ClaseSimulador::diaDerArriba(ClasePersona &persona){
 	posAnt = persona.getPosicion();
-	posAux.first = persona.getPosicion().first + 1;
-	posAux.second = persona.getPosicion().second - 1;
+	posAux.first = persona.getPosicion().first - 1;
+	posAux.second = persona.getPosicion().second + 1;
 	persona.setPosicion(posAux);
 	if (persona.getEstado() == 1) {
 		if (poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] == -1) {
@@ -446,8 +446,8 @@ void ClaseSimulador::diaDerArriba(ClasePersona &persona){
 
 void ClaseSimulador::diaIzqAbajo(ClasePersona &persona){
 	posAnt = persona.getPosicion();
-	posAux.first = persona.getPosicion().first - 1;
-	posAux.second = persona.getPosicion().second + 1;
+	posAux.first = persona.getPosicion().first + 1;
+	posAux.second = persona.getPosicion().second - 1;
 	persona.setPosicion(posAux);
 	if (persona.getEstado() == 1) {
 		if (poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] == -1) {
