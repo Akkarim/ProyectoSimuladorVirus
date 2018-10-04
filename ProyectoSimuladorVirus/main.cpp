@@ -22,7 +22,7 @@ int main(int argc, char* argv[]) {
 	//persona.setProbaInf(inf);
 	//persona.setProbaRec(rec);
 
-	double probaInfeccion, probaRecuperacion;
+	/*double probaInfeccion, probaRecuperacion;
 	int cantSemanas, tics, tamMatriz, cantPersonas, cantPersonasInfectadas;
 
 	cout << "Ingrese la Cantidad de personas: (Vea Yogurt) " << endl;
@@ -59,16 +59,16 @@ int main(int argc, char* argv[]) {
 	
 
 	cout << "Cantidad de tics: " << endl;
-	cin >> tics;
+	cin >> tics;*/
 
 	ClaseSimulador simulador;
 	ClasePersona pipol;
 
-	simulador.llenarLista(cantPersonasInfectadas, probaInfeccion, probaRecuperacion, tamMatriz, cantPersonas);
+	simulador.llenarLista(10, 65, 75, 35, 150);
 
-	for (int i = 0; i < tics; i++) {
+	for (int i = 0; i < 170; i++) {
 		simulador.mover();
-		simulador.revisar(cantSemanas);
+		simulador.revisar(20);
 	}
 
 
