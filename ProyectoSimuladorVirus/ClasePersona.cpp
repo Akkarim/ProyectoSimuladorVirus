@@ -39,7 +39,12 @@ int ClasePersona::getSemana() {
 }
 
 void ClasePersona::modSemana() {
-	this->semana++;
+	if (this->semana < 0) {
+		this->semana = 1;
+	}
+	else {
+		this->semana++;
+	}
 }
 
 

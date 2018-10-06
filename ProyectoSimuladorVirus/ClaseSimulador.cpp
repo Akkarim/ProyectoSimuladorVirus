@@ -13,7 +13,7 @@ ClaseSimulador::~ClaseSimulador()
 }
 
 
-void ClaseSimulador::llenarLista(int cantInfec, double infec, double rec, int tamano, int cantidad)
+void ClaseSimulador::llenarLista(double cantInfec, double infec, double rec, int tamano, int cantidad)
 {
 	poblacionInfectada.resize(tamano);
 	//poblacion.resize(cantidad);
@@ -21,13 +21,10 @@ void ClaseSimulador::llenarLista(int cantInfec, double infec, double rec, int ta
 		poblacionInfectada[i].resize(tamano,-1);
 	}
 	ClasePersona persona;
-	int contador = cantidad * (cantInfec / 100);//Cantidad de personas infectadas inicialmente
+	int contador = cantidad*(cantInfec*0.01);//Cantidad de personas infectadas inicialmente
 	int cantPorHilo = cantidad / omp_get_max_threads();
-#pragma omp parallel num_threads(omp_get_max_threads()) private(persona) shared(contador,tamano,cantidad)
-	{
-		persona.setProbaInf(infec/100);
-		persona.setProbaRec(rec/100);//Como todas son iguales al inicio, esto entra directo.
-		for (int i = 0; i < cantPorHilo; i++) {
+#pragma omp parallel for num_threads(omp_get_max_threads()) private(persona) shared(contador,tamano,cantidad,infec,rec)
+		for (int i = 0; i < cantidad; i++) {
 			if (contador > 0) {
 				persona.setEstado(1);
 				contador--;
@@ -37,6 +34,9 @@ void ClaseSimulador::llenarLista(int cantInfec, double infec, double rec, int ta
 			}
 #pragma omp critical 
 			{
+
+				persona.setProbaInf(infec / 100);
+				persona.setProbaRec(rec / 100);
 				persona.setPosicion(generarPosRandom(tamano));//Asigna una posicion random, se asegura de que no sea repetida
 				if(persona.getEstado()==1){ 
 					poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second]=1;//Si la persona está enferma se marca en la matriz.
@@ -47,7 +47,7 @@ void ClaseSimulador::llenarLista(int cantInfec, double infec, double rec, int ta
 				cout << "Estado: " << persona.getEstado() << " X: " << persona.getPosicion().first << "Y: " << persona.getPosicion().second << endl;
 			}
 		}
-	}
+	
 }
 
 void ClaseSimulador::mover()
@@ -56,7 +56,7 @@ void ClaseSimulador::mover()
 	int random;
 	int distribucion = poblacion.size() / omp_get_max_threads();
 
-#pragma omp parallel for num_threads(1) private(random) shared(gen)
+#pragma omp parallel for num_threads(omp_get_max_threads()) private(random) shared(gen)
 	for (int i = 0; i < poblacion.size();i++){
 			if (poblacion[i].getPosicion().first == 0 && poblacion[i].getPosicion().second == 0) { //Esquina Superior Izquierda
 				uniform_int_distribution<int> distribution(0, 2);
@@ -253,43 +253,73 @@ void ClaseSimulador::mover()
 #pragma omp critical
 				diaDerAbajo(poblacion[i]);
 			}
-			}
+			}/*
 #pragma omp critical
-			cout << "Estado: " << poblacion[i].getEstado() << " X: " << poblacion[i].getPosicion().first << "Y: " << poblacion[i].getPosicion().second << "Impreso por el hilo: " << omp_get_thread_num << endl;
+			cout << "Estado: " << poblacion[i].getEstado() << " X: " << poblacion[i].getPosicion().first << "Y: " << poblacion[i].getPosicion().second << "Impreso por el hilo: " << omp_get_thread_num << endl;*/
 		}
-	}
+}
 
 
 void ClaseSimulador::revisar(int cantSemana){ //Se muere a la semana 2
 	//revisar.todo("hágalo bien :D" + "plis");
-	
-#pragma omp parallel for num_threads(omp_get_max_threads()) 
+	int c = 0;
+#pragma omp parallel for num_threads(4) private(c) shared(cantSemana)
 	for (int i = 0; i < poblacion.size(); i++) {
-		int c = 0;
-		if (poblacion[i].getEstado() == 0 && poblacionInfectada[poblacion[i].getPosicion().first][poblacion[i].getPosicion().second] > 0) { // Esta sano y hay infectaos
-			while (!infectar(poblacion[i]) && c < poblacionInfectada[poblacion[i].getPosicion().first][poblacion[i].getPosicion().second]) {
-				c++; //:D
+		c = poblacionInfectada[poblacion[i].getPosicion().first][poblacion[i].getPosicion().second];
+		if (poblacion[i].getEstado() == 0 && c > 0) { // Esta sano y hay infectaos
+			while (c > 0 ) {
+				if (infectar(poblacion[i])) {
+					poblacion[i].setEstado(1);
+					poblacion[i].modSemana(); // semana masmas
+					poblacionInfectada[poblacion[i].getPosicion().first][poblacion[i].getPosicion().second] += 1;
+					c = 0;
+				}
+				else {
+					c--; //:D
+				}
 			}
 		}
 		else if(poblacion[i].getEstado() == 1){
 			if (poblacion[i].getSemana() == cantSemana) { //si llegó a la cita de la caja
-				poblacion[i].setEstado(3);
+				if (curar(poblacion[i])) {
+					poblacion[i].setEstado(2);
+					poblacionInfectada[poblacion[i].getPosicion().first][poblacion[i].getPosicion().second] -= 1;
+				}
+				else {
+					poblacion[i].setEstado(3);
+					poblacionInfectada[poblacion[i].getPosicion().first][poblacion[i].getPosicion().second] -= 1;
+				}
 			}
 			else {
-				curar(poblacion[i]);
+				poblacion[i].modSemana();
 			}
 		}
 	}
-
+	int enfermos = 0;
+	int sanos = 0;
+	int inmunes = 0;
+	int muertos = 0;
+	for (int i = 0; i < poblacion.size(); i++) {
+		if (poblacion[i].getEstado()==0) {
+			sanos++;
+		}else if(poblacion[i].getEstado() == 1){
+			enfermos++;
+		}else if(poblacion[i].getEstado() == 2){
+			inmunes++;
+		}else if (poblacion[i].getEstado() == 3) {
+			muertos++;
+		}
+	}
+	cout << "Sanos: " << sanos << endl;
+	cout << "Enfermos: " << enfermos << endl;
+	cout << "Inmunes: " << inmunes << endl;
+	cout << "Muertos: " << muertos << endl;
 }
 
 bool ClaseSimulador::infectar(ClasePersona persona)
 {
 	double random = genRandom();
 	if (random <= persona.probaInfectibilidad) {
-		persona.setEstado(1);
-		persona.modSemana(); // semana masmas
-		poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] += 1; 
 		return true;
 	}
 	else {
@@ -297,14 +327,14 @@ bool ClaseSimulador::infectar(ClasePersona persona)
 	}
 }
 
-void ClaseSimulador::curar(ClasePersona persona)
+bool ClaseSimulador::curar(ClasePersona persona)
 {
 	double random = genRandom();
 	if (random <= persona.probaRecuperacion) {
-		persona.setEstado(2);
-		poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second] -= 1;
+		return true;
 	}else {
-		persona.modSemana(); //semanas másmás
+		//persona.modSemana(); //semanas másmás
+		return false;
 	}
 }
 

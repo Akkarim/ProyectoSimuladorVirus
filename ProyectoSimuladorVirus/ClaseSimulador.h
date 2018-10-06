@@ -18,7 +18,7 @@ public:
 	//EFE: Genera una matriz con los estados de cada persona
 	//REQ: Un M coherente con la cantidad de personas
 	//MOD: matrizEstado
-	void llenarLista(int cantInfec, double infec, double rec, int tamano, int cantidad);
+	void llenarLista(double cantInfec, double infec, double rec, int tamano, int cantidad);
 
 	//EFE:
 	//REQ:
@@ -37,7 +37,7 @@ public:
 	//EFE:
 	//REQ:
 	//MOD:
-	void curar(ClasePersona persona);
+	bool curar(ClasePersona persona);
 
 	//EFE:
 	//REQ:
