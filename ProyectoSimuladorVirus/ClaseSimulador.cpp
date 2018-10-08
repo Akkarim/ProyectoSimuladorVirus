@@ -342,9 +342,14 @@ bool ClaseSimulador::curar(ClasePersona persona)
 
 
 double ClaseSimulador::genRandom() {
-	default_random_engine gen(time(0));
-	uniform_real_distribution<double> distribution(0,1);
-	return distribution(gen);
+	//default_random_engine gen(time(NULL));
+	//uniform_real_distribution<double> distribution(0,1);
+	//double perra = 0.0;
+	//for (int i = 0; i < 4; i++) {
+	//	perra = distribution(gen);
+	//}
+	//return perra;
+	return rand() / (RAND_MAX + 1.);
 }
 
 

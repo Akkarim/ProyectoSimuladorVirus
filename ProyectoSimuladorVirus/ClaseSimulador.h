@@ -5,6 +5,8 @@
 #include "ClasePersona.h"
 #include <chrono>
 #include <random>
+#include <time.h>
+#include <stdlib.h> 
 //#include <Billy>
 
 using namespace std;
@@ -84,10 +86,11 @@ public:
 	//MOD: Matriz de Poblacion Infectada y la posicion de la persona
 	void diaIzqArriba(ClasePersona &persona);
 
-	
+	double genRandom();
+
 private:
 
-	double genRandom();
+	
 	pair<int, int> posAnt, posAux;
 	vector<vector<int>> poblacionInfectada; //Matriz con la cantidad de enfermos por posición
 	vector<ClasePersona> poblacion; //Lista con todas las personas.
