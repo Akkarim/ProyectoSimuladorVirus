@@ -2,6 +2,8 @@
 #include <math.h>
 #include <iostream>
 #include <omp.h>
+#include <GL\glew.h>
+#include <GL\freeglut.h>
 #include "ClasePersona.h"
 #include "ClaseSimulador.h"
 using namespace std;
@@ -11,60 +13,28 @@ using namespace std;
 
 ClasePersona persona;
 ClaseSimulador simulador;
+
+void displayMe(){
+	glClear(GL_COLOR_BUFFER_BIT);
+	glBegin(GL_POLYGON_BIT);
+	glVertex2f(0.1, 0.0);                    // bottom left
+	glVertex2f(0.5, 0.0);                    // bottom right
+	glVertex2f(0.5, 0.5);                    // top right
+	glVertex2f(0.0, 0.5);                    // top left
+	glVertex2f(1.1, 1.1);
+	glEnd();
+	glFlush();
+}
+
 int main(int argc, char* argv[]) {
 
-	double probaInfeccion, probaRecuperacion, cantPersonasInfectadas;
-	int cantSemanas, tics, tamMatriz, cantPersonas;
-
-	cout << "Ingrese la Cantidad de personas: " << endl;
-	cin >> cantPersonas;
-
-	cout << "Pontencia Infecciosa: " << endl;
-	cin >> probaInfeccion;
-
-	cout << "Probabilidad de Recuperacion: " << endl;
-	cin >> probaRecuperacion;
-
-	cout << "Semanas antes de morir we: " << endl;
-	cin >> cantSemanas;
-
-	cout << "Porcentage de personas originalmente infectdas: " << endl;
-	cin >> cantPersonasInfectadas;
-
-	cout << "Ingrese el tamano de la Matriz de infeccion: \n1) 100x100\n2)500x500\n3)1000x1000" << endl;
-	int c;
-	cin >> c;
-	switch (c) {
-	case 1:
-		tamMatriz = 100;
-		break;
-	case 2:
-		tamMatriz = 500;
-		break;
-	case 3:
-		tamMatriz = 1000;
-		break;
-	default:
-		cout << "Vea Yogurt, métame un número válido. " << endl;
-	}
-
-	cout << "Cantidad de tics: " << endl;
-	cin >> tics;
-
-	int cantHilos = omp_get_max_threads();
-
-	cout << "Se va a trabajar con " << cantHilos << "hilos" << endl;
-
-	simulador.llenarLista(cantPersonasInfectadas, probaInfeccion, probaRecuperacion, tamMatriz, cantPersonas);
-	
-	for (int i = 0; i < tics; i++) {
-		cout << "Tic: " << i << endl;
-		simulador.mover();
-		cout << "-------------------------------------------------" << endl;
-		simulador.revisar(cantSemanas);
-	}
-
-
+	glutInit(&argc, argv);
+	glutInitDisplayMode(GLUT_SINGLE);
+	glutInitWindowSize(300, 300);
+	glutInitWindowPosition(500, 500);
+	glutCreateWindow("Hello world 8====D");
+	glutDisplayFunc(displayMe);
+	glutMainLoop();
 
 	int x;
 	cin >> x;
@@ -80,3 +50,55 @@ int main(int argc, char* argv[]) {
 //  -||------------||----`--'----||-----------||-
 //   ||            ||       `|| ||| || ||     ||jgs
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+//double probaInfeccion, probaRecuperacion, cantPersonasInfectadas;
+//int cantSemanas, tics, tamMatriz, cantPersonas;
+
+//cout << "Ingrese la Cantidad de personas: " << endl;
+//cin >> cantPersonas;
+
+//cout << "Pontencia Infecciosa: " << endl;
+//cin >> probaInfeccion;
+
+//cout << "Probabilidad de Recuperacion: " << endl;
+//cin >> probaRecuperacion;
+
+//cout << "Semanas antes de morir we: " << endl;
+//cin >> cantSemanas;
+
+//cout << "Porcentage de personas originalmente infectdas: " << endl;
+//cin >> cantPersonasInfectadas;
+
+//cout << "Ingrese el tamano de la Matriz de infeccion: \n1) 100x100\n2)500x500\n3)1000x1000" << endl;
+//int c;
+//cin >> c;
+//switch (c) {
+//case 1:
+//	tamMatriz = 100;
+//	break;
+//case 2:
+//	tamMatriz = 500;
+//	break;
+//case 3:
+//	tamMatriz = 1000;
+//	break;
+//default:
+//	cout << "Vea Yogurt, métame un número válido. " << endl;
+//}
+
+//cout << "Cantidad de tics: " << endl;
+//cin >> tics;
+
+//int cantHilos = omp_get_max_threads();
+
+//cout << "Se va a trabajar con " << cantHilos << "hilos" << endl;
+
+//simulador.llenarLista(cantPersonasInfectadas, probaInfeccion, probaRecuperacion, tamMatriz, cantPersonas);
+//
+//for (int i = 0; i < tics; i++) {
+//	cout << "Tic: " << i << endl;
+//	simulador.mover();
+//	cout << "-------------------------------------------------" << endl;
+//	simulador.revisar(cantSemanas);
+//}
