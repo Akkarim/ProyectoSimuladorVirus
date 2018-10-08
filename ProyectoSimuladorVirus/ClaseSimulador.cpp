@@ -21,7 +21,7 @@ void ClaseSimulador::llenarLista(double cantInfec, double infec, double rec, int
 		poblacionInfectada[i].resize(tamano,-1);
 	}
 	ClasePersona persona;
-	int contador = cantidad*(cantInfec*0.01);//Cantidad de personas infectadas inicialmente
+	int contador = cantidad*(cantInfec/100);//Cantidad de personas infectadas inicialmente
 	int cantPorHilo = cantidad / omp_get_max_threads();
 #pragma omp parallel for num_threads(omp_get_max_threads()) private(persona) shared(contador,tamano,cantidad,infec,rec)
 		for (int i = 0; i < cantidad; i++) {
@@ -34,7 +34,6 @@ void ClaseSimulador::llenarLista(double cantInfec, double infec, double rec, int
 			}
 #pragma omp critical 
 			{
-
 				persona.setProbaInf(infec / 100);
 				persona.setProbaRec(rec / 100);
 				persona.setPosicion(generarPosRandom(tamano));//Asigna una posicion random, se asegura de que no sea repetida
@@ -47,7 +46,6 @@ void ClaseSimulador::llenarLista(double cantInfec, double infec, double rec, int
 				cout << "Estado: " << persona.getEstado() << " X: " << persona.getPosicion().first << "Y: " << persona.getPosicion().second << endl;
 			}
 		}
-	
 }
 
 void ClaseSimulador::mover()

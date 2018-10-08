@@ -64,8 +64,9 @@ int main(int argc, char* argv[]) {
 	ClaseSimulador simulador;
 	ClasePersona pipol;
 
-	simulador.llenarLista(10, 65, 75, 35, 200);
+	simulador.llenarLista(10, 65, 75, 35, 250);
 	
+
 	for (int i = 0; i < 158; i++) {
 		cout << "Tic: " << i << endl;
 		simulador.mover();
