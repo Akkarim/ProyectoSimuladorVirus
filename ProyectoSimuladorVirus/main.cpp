@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <iostream>
+#include <fstream>
 #include <omp.h>
 #include "ClasePersona.h"
 #include "ClaseSimulador.h"
@@ -8,9 +9,12 @@ using namespace std;
 
 #define _CRT_SECURE_NO_WARNINGS 1 // para deshabilitar errores por uso de funciones deprecated sobre CRT o consola
 #pragma warning(disable : 4996)
+#pragma warning(disable : 4199)
+
 
 ClasePersona persona;
 ClaseSimulador simulador;
+
 int main(int argc, char* argv[]) {
 
 	double probaInfeccion, probaRecuperacion, cantPersonasInfectadas;
@@ -31,7 +35,7 @@ int main(int argc, char* argv[]) {
 	cout << "Porcentage de personas originalmente infectdas: " << endl;
 	cin >> cantPersonasInfectadas;
 
-	cout << "Ingrese el tamano de la Matriz de infeccion: \n1) 100x100\n2)500x500\n3)1000x1000" << endl;
+	cout << "Ingrese el tamano de la Matriz de infeccion: \n1) 100x100\n2)500x500\n3)1000x1000" << endl; //intentar iterar esto
 	int c;
 	cin >> c;
 	switch (c) {
@@ -51,17 +55,33 @@ int main(int argc, char* argv[]) {
 	cout << "Cantidad de tics: " << endl;
 	cin >> tics;
 
+	char r;
+	cout << "¿Desea ver la disposicion de la matriz? (s/n) " << endl;
+	cin >> r;
+
 	int cantHilos = omp_get_max_threads();
 
-	cout << "Se va a trabajar con " << cantHilos << "hilos" << endl;
+	ofstream bit("bitacora.txt");
 
-	simulador.llenarLista(cantPersonasInfectadas, probaInfeccion, probaRecuperacion, tamMatriz, cantPersonas);
+	bit << "FELIPE CARMONA B51558 & LUIS CARVAJAL B31494\nDatos iniciales:\n- Cantidad de Personas: " << cantPersonas <<
+		"\n- Probabilidad de infección: " << probaInfeccion << "%" << "\n- Probabilidad de Recuperación: " << probaRecuperacion << "%" <<
+		"\n - Semanas: " << cantSemanas << "\n- Porcentaje de personas originalmente infectadas: " << cantPersonasInfectadas <<"%"<<
+		"\n- Tamaño de la Matriz (cuadrada): " << tamMatriz << "\n- Cantidad de tics: " << tics << "\n- Cantidad de Hilos: " << cantHilos << endl;
+	
+	if (r == 's') {
+		bit << "-----------------Datos de la Matriz-------------------  " << endl;
+	}
+	simulador.llenarLista(cantPersonasInfectadas, probaInfeccion, probaRecuperacion, tamMatriz, cantPersonas, bit, r);
+
+	bit << "-----------------Datos de los TICS-------------------  " << endl;
 	
 	for (int i = 0; i < tics; i++) {
-		cout << "Tic: " << i << endl;
 		simulador.mover();
 		cout << "-------------------------------------------------" << endl;
-		simulador.revisar(cantSemanas);
+		bit << "-------------------------------------------------" << endl;
+		cout << "Tic: " << i << endl;
+		bit << "Tic: " << i << endl;
+		simulador.revisar(cantSemanas, bit);
 	}
 
 
