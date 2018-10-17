@@ -1,5 +1,6 @@
 #include "ClaseSimulador.h"
 #include <iostream>
+#include <ctime>
 
 
 
@@ -53,6 +54,8 @@ void ClaseSimulador::inicializar(double cantInfec, double infec, double rec, int
 
 void ClaseSimulador::ejecutar(int tics, int contSem, ofstream& bit, char r)
 {
+	unsigned t0, t1;
+	t0 = clock();
 	for (int i = 0; i < tics; i++) {
 		mover();
 		cout << "-------------------------------------------------" << endl;
@@ -60,10 +63,19 @@ void ClaseSimulador::ejecutar(int tics, int contSem, ofstream& bit, char r)
 		cout << "Tic: " << i << endl;
 		bit << "Tic: " << i << endl;
 		revisar(contSem, bit, r);
-		if (enfermos == 0) {
-
+		if (enfermos == 0&&c==0) {
+			t1 = clock();
+			tiempo = (double(t1 - t0) / CLOCKS_PER_SEC);
+			cout << "Tiempo que duró en estabilizarse es: " << tiempo << endl;
+			c++;
+			/*
+			(\_/)
+			( •,•)
+			(")_(")
+			*/
 		}
 	}
+	bit << "Tiempo que duró en estabilizarse es: " << tiempo << endl;
 }
 
 void ClaseSimulador::mover()

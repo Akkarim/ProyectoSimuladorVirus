@@ -38,7 +38,7 @@ int main(int argc, char* argv[]) {
 
 	int c;
 	do {
-		cout << "Ingrese el tamano de la Matriz de infeccion: \n1) 100x100\n2)500x500\n3)1000x1000" << endl; //intentar iterar esto
+		cout << "Ingrese el tamano de la Matriz de infeccion: \n1) 100x100\n2)500x500\n3)1000x1000\n4)35x35(datos prueba)" << endl; //intentar iterar esto
 		cin >> c;
 		switch (c) {
 		case 1:
@@ -50,10 +50,13 @@ int main(int argc, char* argv[]) {
 		case 3:
 			tamMatriz = 1000;
 			break;
+		case 4:
+			tamMatriz = 35;
+			break;
 		default:
 			cout << "Error \n Por favor ingrese un numero valido. " << endl;
 		}
-	} while (c > 3);
+	} while (c > 4);
 	cout << "Cantidad de tics: " << endl;
 	cin >> tics;
 
@@ -86,7 +89,8 @@ int main(int argc, char* argv[]) {
 
 	t1 = clock();
 	double time = (double(t1 - t0) / CLOCKS_PER_SEC);
-	cout << "Execution Time: " << time << endl;
+	cout << "Tiempo Total de Ejecución: " << time << endl;
+	bit << "Tiempo Total de Ejecución: " << time << endl;
 
 	int x;
 	cin >> x;

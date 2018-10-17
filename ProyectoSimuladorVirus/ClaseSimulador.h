@@ -96,6 +96,8 @@ public:
 
 private:
 	int enfermos = 0;
+	int c = 0;
+	double tiempo = 0;
 	pair<int, int> posAnt, posAux;
 	vector<vector<int>> poblacionInfectada; //Matriz con la cantidad de enfermos por posición
 	vector<ClasePersona> poblacion; //Lista con todas las personas.
