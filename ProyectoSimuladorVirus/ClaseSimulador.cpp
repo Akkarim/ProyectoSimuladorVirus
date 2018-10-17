@@ -261,13 +261,13 @@ void ClaseSimulador::mover()
 }
 
 
-void ClaseSimulador::revisar(int cantSemana, ofstream& bit){ //Se muere a la semana 20
+void ClaseSimulador::revisar(int cantSemana, ofstream& bit, char r) { //Se muere a la semana 20
 	int c = 0;
 #pragma omp parallel for num_threads(4) private(c) shared(cantSemana)
 	for (int i = 0; i < poblacion.size(); i++) {
 		c = poblacionInfectada[poblacion[i].getPosicion().first][poblacion[i].getPosicion().second];
 		if (poblacion[i].getEstado() == 0 && c > 0) { // Esta sano y hay infectaos
-			while (c > 0 ) {
+			while (c > 0) {
 				if (infectar(poblacion[i])) {
 					poblacion[i].setEstado(1);
 					poblacion[i].modSemana(); // semana masmas
@@ -279,7 +279,7 @@ void ClaseSimulador::revisar(int cantSemana, ofstream& bit){ //Se muere a la sem
 				}
 			}
 		}
-		else if(poblacion[i].getEstado() == 1){
+		else if (poblacion[i].getEstado() == 1) {
 			if (poblacion[i].getSemana() == cantSemana) { //si llegó a la cita de la caja
 				if (curar(poblacion[i])) {
 					poblacion[i].setEstado(2);
@@ -295,40 +295,45 @@ void ClaseSimulador::revisar(int cantSemana, ofstream& bit){ //Se muere a la sem
 			}
 		}
 	}
-	int enfermos = 0;
-	int sanos = 0;
-	int inmunes = 0;
-	int muertos = 0;
-	for (int i = 0; i < poblacion.size(); i++) {
-		if (poblacion[i].getEstado()==0) {
-			sanos++;
-		}else if(poblacion[i].getEstado() == 1){
-			enfermos++;
-		}else if(poblacion[i].getEstado() == 2){
-			inmunes++;
-		}else if (poblacion[i].getEstado() == 3) {
-			muertos++;
+	if (r == 's') {
+		int enfermos = 0;
+		int sanos = 0;
+		int inmunes = 0;
+		int muertos = 0;
+		for (int i = 0; i < poblacion.size(); i++) {
+			if (poblacion[i].getEstado() == 0) {
+				sanos++;
+			}
+			else if (poblacion[i].getEstado() == 1) {
+				enfermos++;
+			}
+			else if (poblacion[i].getEstado() == 2) {
+				inmunes++;
+			}
+			else if (poblacion[i].getEstado() == 3) {
+				muertos++;
+			}
 		}
+		cout << "Cantidad de personas suceptibles: " << sanos << endl;
+		bit << "Sanos: " << sanos << endl;
+		cout << "Porcentaje de personas suceptibles: " << (sanos * 100) / poblacion.size() << "%" << endl;
+		bit << "Porcentaje de personas suceptibles: " << (sanos * 100) / poblacion.size() << "%" << endl;
+
+		cout << "Cantidad de personas enfermas: " << enfermos << endl;
+		bit << "Cantidad de personas enfermas: " << enfermos << endl;
+		cout << "Porcentaje de personas enfermas:" << (enfermos * 100) / poblacion.size() << "%" << endl;
+		bit << "Porcentaje de personas enfermas:" << (enfermos * 100) / poblacion.size() << "%" << endl;
+
+		cout << "Cantidad de personas inmunes: " << inmunes << endl;
+		bit << "Cantidad de personas inmunes: " << inmunes << endl;
+		cout << "Porcentajes de personas inmunes: " << (inmunes * 100) / poblacion.size() << "%" << endl;
+		bit << "Porcentajes de personas inmunes: " << (inmunes * 100) / poblacion.size() << endl;
+
+		cout << "Cantidad de personas muertas: " << muertos << endl;
+		bit << "Cantidad de personas muertas: " << muertos << endl;
+		cout << "Porcentaje de personas muertas: " << (muertos * 100) / poblacion.size() << "%" << endl;
+		bit << "Porcentaje de personas muertas: " << (muertos * 100) / poblacion.size() << "%" << endl;
 	}
-	cout << "Cantidad de personas suceptibles: " << sanos << endl;
-	bit << "Sanos: " << sanos << endl;
-	cout << "Porcentaje de personas suceptibles: " << (sanos * 100) / poblacion.size() << "%" << endl;
-	bit << "Porcentaje de personas suceptibles: " << (sanos * 100) / poblacion.size() << "%" << endl;
-
-	cout << "Cantidad de personas enfermas: " << enfermos << endl;
-	bit << "Cantidad de personas enfermas: " << enfermos << endl;
-	cout << "Porcentaje de personas enfermas:" << (enfermos * 100) / poblacion.size() << "%" << endl;
-	bit << "Porcentaje de personas enfermas:" << (enfermos*100) / poblacion.size() <<"%"<< endl;
-
-	cout << "Cantidad de personas inmunes: " << inmunes << endl;
-	bit << "Cantidad de personas inmunes: " << inmunes << endl;
-	cout << "Porcentajes de personas inmunes: " << (inmunes*100)/poblacion.size()<< "%"<<endl;
-	bit << "Porcentajes de personas inmunes: " << (inmunes * 100) / poblacion.size() << endl;
-
-	cout << "Cantidad de personas muertas: " << muertos << endl;
-	bit << "Cantidad de personas muertas: " << muertos << endl;
-	cout << "Porcentaje de personas muertas: " << (muertos*100) / poblacion.size() <<"%"<< endl;
-	bit << "Porcentaje de personas muertas: " << (muertos * 100) / poblacion.size() << "%" << endl;
 }
 
 bool ClaseSimulador::infectar(ClasePersona persona)

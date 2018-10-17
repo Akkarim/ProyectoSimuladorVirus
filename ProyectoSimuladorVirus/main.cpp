@@ -89,7 +89,7 @@ int main(int argc, char* argv[]) {
 		bit << "-------------------------------------------------" << endl;
 		cout << "Tic: " << i << endl;
 		bit << "Tic: " << i << endl;
-		simulador.revisar(cantSemanas, bit);
+		simulador.revisar(cantSemanas, bit, r);
 	}
 
 	t1 = clock();

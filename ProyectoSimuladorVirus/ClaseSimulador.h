@@ -31,7 +31,7 @@ public:
 	//EFE:
 	//REQ:
 	//MOD:
-	void revisar(int contSem, ofstream& bit);
+	void revisar(int contSem, ofstream& bit, char r);
 
 	//EFE:
 	//REQ:
