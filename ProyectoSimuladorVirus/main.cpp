@@ -77,20 +77,12 @@ int main(int argc, char* argv[]) {
 	unsigned t0, t1;
 	t0 = clock();
 	
-	simulador.llenarLista(cantPersonasInfectadas, probaInfeccion, probaRecuperacion, tamMatriz, cantPersonas, bit, r);
+	simulador.inicializar(cantPersonasInfectadas, probaInfeccion, probaRecuperacion, tamMatriz, cantPersonas, bit, r);
 
 	
 	
 	bit << "-----------------Datos de los TICS-------------------  " << endl;
-	
-	for (int i = 0; i < tics; i++) {
-		simulador.mover();
-		cout << "-------------------------------------------------" << endl;
-		bit << "-------------------------------------------------" << endl;
-		cout << "Tic: " << i << endl;
-		bit << "Tic: " << i << endl;
-		simulador.revisar(cantSemanas, bit, r);
-	}
+	simulador.ejecutar(tics, cantSemanas, bit, r);
 
 	t1 = clock();
 	double time = (double(t1 - t0) / CLOCKS_PER_SEC);

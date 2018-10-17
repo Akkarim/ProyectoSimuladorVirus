@@ -21,7 +21,12 @@ public:
 	//EFE: Genera una matriz con los estados de cada persona
 	//REQ: Un M coherente con la cantidad de personas
 	//MOD: matrizEstado
-	void llenarLista(double cantInfec, double infec, double rec, int tamano, int cantidad, ofstream& bit, char r);
+	void inicializar(double cantInfec, double infec, double rec, int tamano, int cantidad, ofstream& bit, char r);
+
+	//EFE: Mueve y realiza la revisón la contidad de veces que el usuario indique
+	//REQ: Cantidad valida de tics y cantidad de semanas, además de los elementos para la creación de la bitácora.
+	//MOD: vector de personas(población) y matriz de estados.
+	void ejecutar(int tics, int contSem, ofstream& bit, char r);
 
 	//EFE:
 	//REQ:
@@ -90,6 +95,7 @@ public:
 	double genRandom();
 
 private:
+	int enfermos = 0;
 	pair<int, int> posAnt, posAux;
 	vector<vector<int>> poblacionInfectada; //Matriz con la cantidad de enfermos por posición
 	vector<ClasePersona> poblacion; //Lista con todas las personas.

@@ -13,7 +13,7 @@ ClaseSimulador::~ClaseSimulador()
 }
 
 
-void ClaseSimulador::llenarLista(double cantInfec, double infec, double rec, int tamano, int cantidad, ofstream& bit, char r)
+void ClaseSimulador::inicializar(double cantInfec, double infec, double rec, int tamano, int cantidad, ofstream& bit, char r)
 {
 	poblacionInfectada.resize(tamano);
 	//poblacion.resize(cantidad);
@@ -49,6 +49,21 @@ void ClaseSimulador::llenarLista(double cantInfec, double infec, double rec, int
 				}
 			}
 		}
+}
+
+void ClaseSimulador::ejecutar(int tics, int contSem, ofstream& bit, char r)
+{
+	for (int i = 0; i < tics; i++) {
+		mover();
+		cout << "-------------------------------------------------" << endl;
+		bit << "-------------------------------------------------" << endl;
+		cout << "Tic: " << i << endl;
+		bit << "Tic: " << i << endl;
+		revisar(contSem, bit, r);
+		if (enfermos == 0) {
+
+		}
+	}
 }
 
 void ClaseSimulador::mover()
@@ -296,7 +311,7 @@ void ClaseSimulador::revisar(int cantSemana, ofstream& bit, char r) { //Se muere
 		}
 	}
 	if (r == 's') {
-		int enfermos = 0;
+		enfermos = 0;
 		int sanos = 0;
 		int inmunes = 0;
 		int muertos = 0;
