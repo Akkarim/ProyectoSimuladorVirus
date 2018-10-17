@@ -312,23 +312,23 @@ void ClaseSimulador::revisar(int cantSemana, ofstream& bit){ //Se muere a la sem
 	}
 	cout << "Cantidad de personas suceptibles: " << sanos << endl;
 	bit << "Sanos: " << sanos << endl;
-	cout << "Porcentaje de personas suceptibles: " << (sanos * 0,1) << "%" << endl;
-	bit << "Porcentaje de personas suceptibles: " << (sanos * 0,1) << "%" << endl;
+	cout << "Porcentaje de personas suceptibles: " << (sanos * 100) / poblacion.size() << "%" << endl;
+	bit << "Porcentaje de personas suceptibles: " << (sanos * 100) / poblacion.size() << "%" << endl;
 
 	cout << "Cantidad de personas enfermas: " << enfermos << endl;
 	bit << "Cantidad de personas enfermas: " << enfermos << endl;
-	cout << "Porcentaje de personas enfermas:" << (enfermos * 0,1) << "%" << endl;
-	bit << "Porcentaje de personas enfermas:" << (enfermos*0,1) <<"%"<< endl;
+	cout << "Porcentaje de personas enfermas:" << (enfermos * 100) / poblacion.size() << "%" << endl;
+	bit << "Porcentaje de personas enfermas:" << (enfermos*100) / poblacion.size() <<"%"<< endl;
 
 	cout << "Cantidad de personas inmunes: " << inmunes << endl;
 	bit << "Cantidad de personas inmunes: " << inmunes << endl;
-	cout << "Porcentajes de personas inmunes: " << (inmunes*100)<< "%"<<endl;
-	bit << "Porcentajes de personas inmunes: " << (inmunes * 0,1) << endl;
+	cout << "Porcentajes de personas inmunes: " << (inmunes*100)/poblacion.size()<< "%"<<endl;
+	bit << "Porcentajes de personas inmunes: " << (inmunes * 100) / poblacion.size() << endl;
 
 	cout << "Cantidad de personas muertas: " << muertos << endl;
 	bit << "Cantidad de personas muertas: " << muertos << endl;
-	cout << "Porcentaje de personas muertas: " << (muertos*0,1) <<"%"<< endl;
-	bit << "Porcentaje de personas muertas: " << (muertos * 0,1) << "%" << endl;
+	cout << "Porcentaje de personas muertas: " << (muertos*100) / poblacion.size() <<"%"<< endl;
+	bit << "Porcentaje de personas muertas: " << (muertos * 100) / poblacion.size() << "%" << endl;
 }
 
 bool ClaseSimulador::infectar(ClasePersona persona)
@@ -354,13 +354,6 @@ bool ClaseSimulador::curar(ClasePersona persona)
 }
 
 double ClaseSimulador::genRandom() {
-	//default_random_engine gen(time(NULL));
-	//uniform_real_distribution<double> distribution(0,1);
-	//double perra = 0.0;
-	//for (int i = 0; i < 4; i++) {
-	//	perra = distribution(gen);
-	//}
-	//return perra;
 	return rand() / (RAND_MAX + 1.);
 }
 

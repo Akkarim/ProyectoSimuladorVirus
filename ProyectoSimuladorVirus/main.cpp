@@ -79,23 +79,11 @@ int main(int argc, char* argv[]) {
 	
 	simulador.llenarLista(cantPersonasInfectadas, probaInfeccion, probaRecuperacion, tamMatriz, cantPersonas, bit, r);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-	simulador.llenarLista(10, 65, 75, 35, 250);
 	
-
-	for (int i = 0; i < 158; i++) {
-=======
-	simulador.llenarLista(cantPersonasInfectadas, probaInfeccion, probaRecuperacion, tamMatriz, cantPersonas);
 	
-	for (int i = 0; i < tics; i++) {
->>>>>>> af3da47029803ed18e1d6118eb183ce904ad1041
-		cout << "Tic: " << i << endl;
-=======
 	bit << "-----------------Datos de los TICS-------------------  " << endl;
 	
 	for (int i = 0; i < tics; i++) {
->>>>>>> 08e4e6432e2620df6d759093ba29b016e4068f54
 		simulador.mover();
 		cout << "-------------------------------------------------" << endl;
 		bit << "-------------------------------------------------" << endl;

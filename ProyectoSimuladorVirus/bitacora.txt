@@ -1,0 +1,2513 @@
+FELIPE CARMONA B51558 & LUIS CARVAJAL B31494
+Datos iniciales:
+- Cantidad de Personas: 1000
+- Probabilidad de infección: 65%
+- Probabilidad de Recuperación: 75%
+ - Semanas: 20
+- Porcentaje de personas originalmente infectadas: 20%
+ - Cantidad de personas originalmente infectadas: 200
+- Tamaño de la Matriz (cuadrada): 100
+- Cantidad de tics: 250
+- Cantidad de Hilos: 4
+-----------------Datos de la Matriz-------------------  
+-----------------Datos de los TICS-------------------  
+-------------------------------------------------
+Tic: 0
+Sanos: 790
+Porcentaje de personas suceptibles: 79%
+Cantidad de personas enfermas: 210
+Porcentaje de personas enfermas:21%
+Cantidad de personas inmunes: 0
+Porcentajes de personas inmunes: 0
+Cantidad de personas muertas: 0
+Porcentaje de personas muertas: 0%
+-------------------------------------------------
+Tic: 1
+Sanos: 782
+Porcentaje de personas suceptibles: 78%
+Cantidad de personas enfermas: 218
+Porcentaje de personas enfermas:21%
+Cantidad de personas inmunes: 0
+Porcentajes de personas inmunes: 0
+Cantidad de personas muertas: 0
+Porcentaje de personas muertas: 0%
+-------------------------------------------------
+Tic: 2
+Sanos: 777
+Porcentaje de personas suceptibles: 77%
+Cantidad de personas enfermas: 223
+Porcentaje de personas enfermas:22%
+Cantidad de personas inmunes: 0
+Porcentajes de personas inmunes: 0
+Cantidad de personas muertas: 0
+Porcentaje de personas muertas: 0%
+-------------------------------------------------
+Tic: 3
+Sanos: 765
+Porcentaje de personas suceptibles: 76%
+Cantidad de personas enfermas: 235
+Porcentaje de personas enfermas:23%
+Cantidad de personas inmunes: 0
+Porcentajes de personas inmunes: 0
+Cantidad de personas muertas: 0
+Porcentaje de personas muertas: 0%
+-------------------------------------------------
+Tic: 4
+Sanos: 752
+Porcentaje de personas suceptibles: 75%
+Cantidad de personas enfermas: 248
+Porcentaje de personas enfermas:24%
+Cantidad de personas inmunes: 0
+Porcentajes de personas inmunes: 0
+Cantidad de personas muertas: 0
+Porcentaje de personas muertas: 0%
+-------------------------------------------------
+Tic: 5
+Sanos: 742
+Porcentaje de personas suceptibles: 74%
+Cantidad de personas enfermas: 258
+Porcentaje de personas enfermas:25%
+Cantidad de personas inmunes: 0
+Porcentajes de personas inmunes: 0
+Cantidad de personas muertas: 0
+Porcentaje de personas muertas: 0%
+-------------------------------------------------
+Tic: 6
+Sanos: 727
+Porcentaje de personas suceptibles: 72%
+Cantidad de personas enfermas: 273
+Porcentaje de personas enfermas:27%
+Cantidad de personas inmunes: 0
+Porcentajes de personas inmunes: 0
+Cantidad de personas muertas: 0
+Porcentaje de personas muertas: 0%
+-------------------------------------------------
+Tic: 7
+Sanos: 720
+Porcentaje de personas suceptibles: 72%
+Cantidad de personas enfermas: 280
+Porcentaje de personas enfermas:28%
+Cantidad de personas inmunes: 0
+Porcentajes de personas inmunes: 0
+Cantidad de personas muertas: 0
+Porcentaje de personas muertas: 0%
+-------------------------------------------------
+Tic: 8
+Sanos: 707
+Porcentaje de personas suceptibles: 70%
+Cantidad de personas enfermas: 293
+Porcentaje de personas enfermas:29%
+Cantidad de personas inmunes: 0
+Porcentajes de personas inmunes: 0
+Cantidad de personas muertas: 0
+Porcentaje de personas muertas: 0%
+-------------------------------------------------
+Tic: 9
+Sanos: 699
+Porcentaje de personas suceptibles: 69%
+Cantidad de personas enfermas: 301
+Porcentaje de personas enfermas:30%
+Cantidad de personas inmunes: 0
+Porcentajes de personas inmunes: 0
+Cantidad de personas muertas: 0
+Porcentaje de personas muertas: 0%
+-------------------------------------------------
+Tic: 10
+Sanos: 691
+Porcentaje de personas suceptibles: 69%
+Cantidad de personas enfermas: 309
+Porcentaje de personas enfermas:30%
+Cantidad de personas inmunes: 0
+Porcentajes de personas inmunes: 0
+Cantidad de personas muertas: 0
+Porcentaje de personas muertas: 0%
+-------------------------------------------------
+Tic: 11
+Sanos: 682
+Porcentaje de personas suceptibles: 68%
+Cantidad de personas enfermas: 318
+Porcentaje de personas enfermas:31%
+Cantidad de personas inmunes: 0
+Porcentajes de personas inmunes: 0
+Cantidad de personas muertas: 0
+Porcentaje de personas muertas: 0%
+-------------------------------------------------
+Tic: 12
+Sanos: 673
+Porcentaje de personas suceptibles: 67%
+Cantidad de personas enfermas: 327
+Porcentaje de personas enfermas:32%
+Cantidad de personas inmunes: 0
+Porcentajes de personas inmunes: 0
+Cantidad de personas muertas: 0
+Porcentaje de personas muertas: 0%
+-------------------------------------------------
+Tic: 13
+Sanos: 659
+Porcentaje de personas suceptibles: 65%
+Cantidad de personas enfermas: 341
+Porcentaje de personas enfermas:34%
+Cantidad de personas inmunes: 0
+Porcentajes de personas inmunes: 0
+Cantidad de personas muertas: 0
+Porcentaje de personas muertas: 0%
+-------------------------------------------------
+Tic: 14
+Sanos: 649
+Porcentaje de personas suceptibles: 64%
+Cantidad de personas enfermas: 351
+Porcentaje de personas enfermas:35%
+Cantidad de personas inmunes: 0
+Porcentajes de personas inmunes: 0
+Cantidad de personas muertas: 0
+Porcentaje de personas muertas: 0%
+-------------------------------------------------
+Tic: 15
+Sanos: 638
+Porcentaje de personas suceptibles: 63%
+Cantidad de personas enfermas: 362
+Porcentaje de personas enfermas:36%
+Cantidad de personas inmunes: 0
+Porcentajes de personas inmunes: 0
+Cantidad de personas muertas: 0
+Porcentaje de personas muertas: 0%
+-------------------------------------------------
+Tic: 16
+Sanos: 621
+Porcentaje de personas suceptibles: 62%
+Cantidad de personas enfermas: 379
+Porcentaje de personas enfermas:37%
+Cantidad de personas inmunes: 0
+Porcentajes de personas inmunes: 0
+Cantidad de personas muertas: 0
+Porcentaje de personas muertas: 0%
+-------------------------------------------------
+Tic: 17
+Sanos: 602
+Porcentaje de personas suceptibles: 60%
+Cantidad de personas enfermas: 398
+Porcentaje de personas enfermas:39%
+Cantidad de personas inmunes: 0
+Porcentajes de personas inmunes: 0
+Cantidad de personas muertas: 0
+Porcentaje de personas muertas: 0%
+-------------------------------------------------
+Tic: 18
+Sanos: 592
+Porcentaje de personas suceptibles: 59%
+Cantidad de personas enfermas: 408
+Porcentaje de personas enfermas:40%
+Cantidad de personas inmunes: 0
+Porcentajes de personas inmunes: 0
+Cantidad de personas muertas: 0
+Porcentaje de personas muertas: 0%
+-------------------------------------------------
+Tic: 19
+Sanos: 580
+Porcentaje de personas suceptibles: 58%
+Cantidad de personas enfermas: 420
+Porcentaje de personas enfermas:42%
+Cantidad de personas inmunes: 0
+Porcentajes de personas inmunes: 0
+Cantidad de personas muertas: 0
+Porcentaje de personas muertas: 0%
+-------------------------------------------------
+Tic: 20
+Sanos: 569
+Porcentaje de personas suceptibles: 56%
+Cantidad de personas enfermas: 221
+Porcentaje de personas enfermas:22%
+Cantidad de personas inmunes: 161
+Porcentajes de personas inmunes: 16
+Cantidad de personas muertas: 49
+Porcentaje de personas muertas: 4%
+-------------------------------------------------
+Tic: 21
+Sanos: 561
+Porcentaje de personas suceptibles: 56%
+Cantidad de personas enfermas: 221
+Porcentaje de personas enfermas:22%
+Cantidad de personas inmunes: 167
+Porcentajes de personas inmunes: 16
+Cantidad de personas muertas: 51
+Porcentaje de personas muertas: 5%
+-------------------------------------------------
+Tic: 22
+Sanos: 557
+Porcentaje de personas suceptibles: 55%
+Cantidad de personas enfermas: 220
+Porcentaje de personas enfermas:22%
+Cantidad de personas inmunes: 172
+Porcentajes de personas inmunes: 17
+Cantidad de personas muertas: 51
+Porcentaje de personas muertas: 5%
+-------------------------------------------------
+Tic: 23
+Sanos: 553
+Porcentaje de personas suceptibles: 55%
+Cantidad de personas enfermas: 212
+Porcentaje de personas enfermas:21%
+Cantidad de personas inmunes: 180
+Porcentajes de personas inmunes: 18
+Cantidad de personas muertas: 55
+Porcentaje de personas muertas: 5%
+-------------------------------------------------
+Tic: 24
+Sanos: 541
+Porcentaje de personas suceptibles: 54%
+Cantidad de personas enfermas: 211
+Porcentaje de personas enfermas:21%
+Cantidad de personas inmunes: 189
+Porcentajes de personas inmunes: 18
+Cantidad de personas muertas: 59
+Porcentaje de personas muertas: 5%
+-------------------------------------------------
+Tic: 25
+Sanos: 537
+Porcentaje de personas suceptibles: 53%
+Cantidad de personas enfermas: 205
+Porcentaje de personas enfermas:20%
+Cantidad de personas inmunes: 196
+Porcentajes de personas inmunes: 19
+Cantidad de personas muertas: 62
+Porcentaje de personas muertas: 6%
+-------------------------------------------------
+Tic: 26
+Sanos: 526
+Porcentaje de personas suceptibles: 52%
+Cantidad de personas enfermas: 201
+Porcentaje de personas enfermas:20%
+Cantidad de personas inmunes: 205
+Porcentajes de personas inmunes: 20
+Cantidad de personas muertas: 68
+Porcentaje de personas muertas: 6%
+-------------------------------------------------
+Tic: 27
+Sanos: 520
+Porcentaje de personas suceptibles: 52%
+Cantidad de personas enfermas: 200
+Porcentaje de personas enfermas:20%
+Cantidad de personas inmunes: 210
+Porcentajes de personas inmunes: 21
+Cantidad de personas muertas: 70
+Porcentaje de personas muertas: 7%
+-------------------------------------------------
+Tic: 28
+Sanos: 513
+Porcentaje de personas suceptibles: 51%
+Cantidad de personas enfermas: 194
+Porcentaje de personas enfermas:19%
+Cantidad de personas inmunes: 217
+Porcentajes de personas inmunes: 21
+Cantidad de personas muertas: 76
+Porcentaje de personas muertas: 7%
+-------------------------------------------------
+Tic: 29
+Sanos: 504
+Porcentaje de personas suceptibles: 50%
+Cantidad de personas enfermas: 195
+Porcentaje de personas enfermas:19%
+Cantidad de personas inmunes: 222
+Porcentajes de personas inmunes: 22
+Cantidad de personas muertas: 79
+Porcentaje de personas muertas: 7%
+-------------------------------------------------
+Tic: 30
+Sanos: 501
+Porcentaje de personas suceptibles: 50%
+Cantidad de personas enfermas: 190
+Porcentaje de personas enfermas:19%
+Cantidad de personas inmunes: 230
+Porcentajes de personas inmunes: 23
+Cantidad de personas muertas: 79
+Porcentaje de personas muertas: 7%
+-------------------------------------------------
+Tic: 31
+Sanos: 492
+Porcentaje de personas suceptibles: 49%
+Cantidad de personas enfermas: 190
+Porcentaje de personas enfermas:19%
+Cantidad de personas inmunes: 235
+Porcentajes de personas inmunes: 23
+Cantidad de personas muertas: 83
+Porcentaje de personas muertas: 8%
+-------------------------------------------------
+Tic: 32
+Sanos: 489
+Porcentaje de personas suceptibles: 48%
+Cantidad de personas enfermas: 184
+Porcentaje de personas enfermas:18%
+Cantidad de personas inmunes: 242
+Porcentajes de personas inmunes: 24
+Cantidad de personas muertas: 85
+Porcentaje de personas muertas: 8%
+-------------------------------------------------
+Tic: 33
+Sanos: 476
+Porcentaje de personas suceptibles: 47%
+Cantidad de personas enfermas: 183
+Porcentaje de personas enfermas:18%
+Cantidad de personas inmunes: 254
+Porcentajes de personas inmunes: 25
+Cantidad de personas muertas: 87
+Porcentaje de personas muertas: 8%
+-------------------------------------------------
+Tic: 34
+Sanos: 473
+Porcentaje de personas suceptibles: 47%
+Cantidad de personas enfermas: 176
+Porcentaje de personas enfermas:17%
+Cantidad de personas inmunes: 262
+Porcentajes de personas inmunes: 26
+Cantidad de personas muertas: 89
+Porcentaje de personas muertas: 8%
+-------------------------------------------------
+Tic: 35
+Sanos: 468
+Porcentaje de personas suceptibles: 46%
+Cantidad de personas enfermas: 170
+Porcentaje de personas enfermas:17%
+Cantidad de personas inmunes: 272
+Porcentajes de personas inmunes: 27
+Cantidad de personas muertas: 90
+Porcentaje de personas muertas: 9%
+-------------------------------------------------
+Tic: 36
+Sanos: 464
+Porcentaje de personas suceptibles: 46%
+Cantidad de personas enfermas: 157
+Porcentaje de personas enfermas:15%
+Cantidad de personas inmunes: 286
+Porcentajes de personas inmunes: 28
+Cantidad de personas muertas: 93
+Porcentaje de personas muertas: 9%
+-------------------------------------------------
+Tic: 37
+Sanos: 455
+Porcentaje de personas suceptibles: 45%
+Cantidad de personas enfermas: 147
+Porcentaje de personas enfermas:14%
+Cantidad de personas inmunes: 298
+Porcentajes de personas inmunes: 29
+Cantidad de personas muertas: 100
+Porcentaje de personas muertas: 10%
+-------------------------------------------------
+Tic: 38
+Sanos: 454
+Porcentaje de personas suceptibles: 45%
+Cantidad de personas enfermas: 138
+Porcentaje de personas enfermas:13%
+Cantidad de personas inmunes: 306
+Porcentajes de personas inmunes: 30
+Cantidad de personas muertas: 102
+Porcentaje de personas muertas: 10%
+-------------------------------------------------
+Tic: 39
+Sanos: 448
+Porcentaje de personas suceptibles: 44%
+Cantidad de personas enfermas: 132
+Porcentaje de personas enfermas:13%
+Cantidad de personas inmunes: 316
+Porcentajes de personas inmunes: 31
+Cantidad de personas muertas: 104
+Porcentaje de personas muertas: 10%
+-------------------------------------------------
+Tic: 40
+Sanos: 443
+Porcentaje de personas suceptibles: 44%
+Cantidad de personas enfermas: 126
+Porcentaje de personas enfermas:12%
+Cantidad de personas inmunes: 324
+Porcentajes de personas inmunes: 32
+Cantidad de personas muertas: 107
+Porcentaje de personas muertas: 10%
+-------------------------------------------------
+Tic: 41
+Sanos: 438
+Porcentaje de personas suceptibles: 43%
+Cantidad de personas enfermas: 123
+Porcentaje de personas enfermas:12%
+Cantidad de personas inmunes: 331
+Porcentajes de personas inmunes: 33
+Cantidad de personas muertas: 108
+Porcentaje de personas muertas: 10%
+-------------------------------------------------
+Tic: 42
+Sanos: 433
+Porcentaje de personas suceptibles: 43%
+Cantidad de personas enfermas: 124
+Porcentaje de personas enfermas:12%
+Cantidad de personas inmunes: 334
+Porcentajes de personas inmunes: 33
+Cantidad de personas muertas: 109
+Porcentaje de personas muertas: 10%
+-------------------------------------------------
+Tic: 43
+Sanos: 431
+Porcentaje de personas suceptibles: 43%
+Cantidad de personas enfermas: 122
+Porcentaje de personas enfermas:12%
+Cantidad de personas inmunes: 338
+Porcentajes de personas inmunes: 33
+Cantidad de personas muertas: 109
+Porcentaje de personas muertas: 10%
+-------------------------------------------------
+Tic: 44
+Sanos: 428
+Porcentaje de personas suceptibles: 42%
+Cantidad de personas enfermas: 113
+Porcentaje de personas enfermas:11%
+Cantidad de personas inmunes: 349
+Porcentajes de personas inmunes: 34
+Cantidad de personas muertas: 110
+Porcentaje de personas muertas: 11%
+-------------------------------------------------
+Tic: 45
+Sanos: 426
+Porcentaje de personas suceptibles: 42%
+Cantidad de personas enfermas: 111
+Porcentaje de personas enfermas:11%
+Cantidad de personas inmunes: 351
+Porcentajes de personas inmunes: 35
+Cantidad de personas muertas: 112
+Porcentaje de personas muertas: 11%
+-------------------------------------------------
+Tic: 46
+Sanos: 424
+Porcentaje de personas suceptibles: 42%
+Cantidad de personas enfermas: 102
+Porcentaje de personas enfermas:10%
+Cantidad de personas inmunes: 360
+Porcentajes de personas inmunes: 36
+Cantidad de personas muertas: 114
+Porcentaje de personas muertas: 11%
+-------------------------------------------------
+Tic: 47
+Sanos: 419
+Porcentaje de personas suceptibles: 41%
+Cantidad de personas enfermas: 101
+Porcentaje de personas enfermas:10%
+Cantidad de personas inmunes: 366
+Porcentajes de personas inmunes: 36
+Cantidad de personas muertas: 114
+Porcentaje de personas muertas: 11%
+-------------------------------------------------
+Tic: 48
+Sanos: 416
+Porcentaje de personas suceptibles: 41%
+Cantidad de personas enfermas: 97
+Porcentaje de personas enfermas:9%
+Cantidad de personas inmunes: 370
+Porcentajes de personas inmunes: 37
+Cantidad de personas muertas: 117
+Porcentaje de personas muertas: 11%
+-------------------------------------------------
+Tic: 49
+Sanos: 410
+Porcentaje de personas suceptibles: 41%
+Cantidad de personas enfermas: 94
+Porcentaje de personas enfermas:9%
+Cantidad de personas inmunes: 377
+Porcentajes de personas inmunes: 37
+Cantidad de personas muertas: 119
+Porcentaje de personas muertas: 11%
+-------------------------------------------------
+Tic: 50
+Sanos: 408
+Porcentaje de personas suceptibles: 40%
+Cantidad de personas enfermas: 93
+Porcentaje de personas enfermas:9%
+Cantidad de personas inmunes: 380
+Porcentajes de personas inmunes: 38
+Cantidad de personas muertas: 119
+Porcentaje de personas muertas: 11%
+-------------------------------------------------
+Tic: 51
+Sanos: 407
+Porcentaje de personas suceptibles: 40%
+Cantidad de personas enfermas: 85
+Porcentaje de personas enfermas:8%
+Cantidad de personas inmunes: 385
+Porcentajes de personas inmunes: 38
+Cantidad de personas muertas: 123
+Porcentaje de personas muertas: 12%
+-------------------------------------------------
+Tic: 52
+Sanos: 403
+Porcentaje de personas suceptibles: 40%
+Cantidad de personas enfermas: 86
+Porcentaje de personas enfermas:8%
+Cantidad de personas inmunes: 387
+Porcentajes de personas inmunes: 38
+Cantidad de personas muertas: 124
+Porcentaje de personas muertas: 12%
+-------------------------------------------------
+Tic: 53
+Sanos: 402
+Porcentaje de personas suceptibles: 40%
+Cantidad de personas enfermas: 74
+Porcentaje de personas enfermas:7%
+Cantidad de personas inmunes: 398
+Porcentajes de personas inmunes: 39
+Cantidad de personas muertas: 126
+Porcentaje de personas muertas: 12%
+-------------------------------------------------
+Tic: 54
+Sanos: 400
+Porcentaje de personas suceptibles: 40%
+Cantidad de personas enfermas: 73
+Porcentaje de personas enfermas:7%
+Cantidad de personas inmunes: 400
+Porcentajes de personas inmunes: 40
+Cantidad de personas muertas: 127
+Porcentaje de personas muertas: 12%
+-------------------------------------------------
+Tic: 55
+Sanos: 398
+Porcentaje de personas suceptibles: 39%
+Cantidad de personas enfermas: 70
+Porcentaje de personas enfermas:7%
+Cantidad de personas inmunes: 403
+Porcentajes de personas inmunes: 40
+Cantidad de personas muertas: 129
+Porcentaje de personas muertas: 12%
+-------------------------------------------------
+Tic: 56
+Sanos: 395
+Porcentaje de personas suceptibles: 39%
+Cantidad de personas enfermas: 69
+Porcentaje de personas enfermas:6%
+Cantidad de personas inmunes: 407
+Porcentajes de personas inmunes: 40
+Cantidad de personas muertas: 129
+Porcentaje de personas muertas: 12%
+-------------------------------------------------
+Tic: 57
+Sanos: 393
+Porcentaje de personas suceptibles: 39%
+Cantidad de personas enfermas: 62
+Porcentaje de personas enfermas:6%
+Cantidad de personas inmunes: 413
+Porcentajes de personas inmunes: 41
+Cantidad de personas muertas: 132
+Porcentaje de personas muertas: 13%
+-------------------------------------------------
+Tic: 58
+Sanos: 392
+Porcentaje de personas suceptibles: 39%
+Cantidad de personas enfermas: 62
+Porcentaje de personas enfermas:6%
+Cantidad de personas inmunes: 414
+Porcentajes de personas inmunes: 41
+Cantidad de personas muertas: 132
+Porcentaje de personas muertas: 13%
+-------------------------------------------------
+Tic: 59
+Sanos: 390
+Porcentaje de personas suceptibles: 39%
+Cantidad de personas enfermas: 58
+Porcentaje de personas enfermas:5%
+Cantidad de personas inmunes: 419
+Porcentajes de personas inmunes: 41
+Cantidad de personas muertas: 133
+Porcentaje de personas muertas: 13%
+-------------------------------------------------
+Tic: 60
+Sanos: 387
+Porcentaje de personas suceptibles: 38%
+Cantidad de personas enfermas: 56
+Porcentaje de personas enfermas:5%
+Cantidad de personas inmunes: 424
+Porcentajes de personas inmunes: 42
+Cantidad de personas muertas: 133
+Porcentaje de personas muertas: 13%
+-------------------------------------------------
+Tic: 61
+Sanos: 385
+Porcentaje de personas suceptibles: 38%
+Cantidad de personas enfermas: 53
+Porcentaje de personas enfermas:5%
+Cantidad de personas inmunes: 426
+Porcentajes de personas inmunes: 42
+Cantidad de personas muertas: 136
+Porcentaje de personas muertas: 13%
+-------------------------------------------------
+Tic: 62
+Sanos: 383
+Porcentaje de personas suceptibles: 38%
+Cantidad de personas enfermas: 50
+Porcentaje de personas enfermas:5%
+Cantidad de personas inmunes: 429
+Porcentajes de personas inmunes: 42
+Cantidad de personas muertas: 138
+Porcentaje de personas muertas: 13%
+-------------------------------------------------
+Tic: 63
+Sanos: 382
+Porcentaje de personas suceptibles: 38%
+Cantidad de personas enfermas: 49
+Porcentaje de personas enfermas:4%
+Cantidad de personas inmunes: 431
+Porcentajes de personas inmunes: 43
+Cantidad de personas muertas: 138
+Porcentaje de personas muertas: 13%
+-------------------------------------------------
+Tic: 64
+Sanos: 382
+Porcentaje de personas suceptibles: 38%
+Cantidad de personas enfermas: 46
+Porcentaje de personas enfermas:4%
+Cantidad de personas inmunes: 433
+Porcentajes de personas inmunes: 43
+Cantidad de personas muertas: 139
+Porcentaje de personas muertas: 13%
+-------------------------------------------------
+Tic: 65
+Sanos: 382
+Porcentaje de personas suceptibles: 38%
+Cantidad de personas enfermas: 44
+Porcentaje de personas enfermas:4%
+Cantidad de personas inmunes: 435
+Porcentajes de personas inmunes: 43
+Cantidad de personas muertas: 139
+Porcentaje de personas muertas: 13%
+-------------------------------------------------
+Tic: 66
+Sanos: 380
+Porcentaje de personas suceptibles: 38%
+Cantidad de personas enfermas: 44
+Porcentaje de personas enfermas:4%
+Cantidad de personas inmunes: 437
+Porcentajes de personas inmunes: 43
+Cantidad de personas muertas: 139
+Porcentaje de personas muertas: 13%
+-------------------------------------------------
+Tic: 67
+Sanos: 378
+Porcentaje de personas suceptibles: 37%
+Cantidad de personas enfermas: 41
+Porcentaje de personas enfermas:4%
+Cantidad de personas inmunes: 440
+Porcentajes de personas inmunes: 44
+Cantidad de personas muertas: 141
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 68
+Sanos: 378
+Porcentaje de personas suceptibles: 37%
+Cantidad de personas enfermas: 38
+Porcentaje de personas enfermas:3%
+Cantidad de personas inmunes: 443
+Porcentajes de personas inmunes: 44
+Cantidad de personas muertas: 141
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 69
+Sanos: 377
+Porcentaje de personas suceptibles: 37%
+Cantidad de personas enfermas: 33
+Porcentaje de personas enfermas:3%
+Cantidad de personas inmunes: 448
+Porcentajes de personas inmunes: 44
+Cantidad de personas muertas: 142
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 70
+Sanos: 375
+Porcentaje de personas suceptibles: 37%
+Cantidad de personas enfermas: 33
+Porcentaje de personas enfermas:3%
+Cantidad de personas inmunes: 450
+Porcentajes de personas inmunes: 45
+Cantidad de personas muertas: 142
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 71
+Sanos: 374
+Porcentaje de personas suceptibles: 37%
+Cantidad de personas enfermas: 33
+Porcentaje de personas enfermas:3%
+Cantidad de personas inmunes: 451
+Porcentajes de personas inmunes: 45
+Cantidad de personas muertas: 142
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 72
+Sanos: 374
+Porcentaje de personas suceptibles: 37%
+Cantidad de personas enfermas: 29
+Porcentaje de personas enfermas:2%
+Cantidad de personas inmunes: 455
+Porcentajes de personas inmunes: 45
+Cantidad de personas muertas: 142
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 73
+Sanos: 372
+Porcentaje de personas suceptibles: 37%
+Cantidad de personas enfermas: 30
+Porcentaje de personas enfermas:3%
+Cantidad de personas inmunes: 456
+Porcentajes de personas inmunes: 45
+Cantidad de personas muertas: 142
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 74
+Sanos: 372
+Porcentaje de personas suceptibles: 37%
+Cantidad de personas enfermas: 28
+Porcentaje de personas enfermas:2%
+Cantidad de personas inmunes: 458
+Porcentajes de personas inmunes: 45
+Cantidad de personas muertas: 142
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 75
+Sanos: 371
+Porcentaje de personas suceptibles: 37%
+Cantidad de personas enfermas: 27
+Porcentaje de personas enfermas:2%
+Cantidad de personas inmunes: 460
+Porcentajes de personas inmunes: 46
+Cantidad de personas muertas: 142
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 76
+Sanos: 370
+Porcentaje de personas suceptibles: 37%
+Cantidad de personas enfermas: 25
+Porcentaje de personas enfermas:2%
+Cantidad de personas inmunes: 462
+Porcentajes de personas inmunes: 46
+Cantidad de personas muertas: 143
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 77
+Sanos: 370
+Porcentaje de personas suceptibles: 37%
+Cantidad de personas enfermas: 23
+Porcentaje de personas enfermas:2%
+Cantidad de personas inmunes: 464
+Porcentajes de personas inmunes: 46
+Cantidad de personas muertas: 143
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 78
+Sanos: 369
+Porcentaje de personas suceptibles: 36%
+Cantidad de personas enfermas: 23
+Porcentaje de personas enfermas:2%
+Cantidad de personas inmunes: 465
+Porcentajes de personas inmunes: 46
+Cantidad de personas muertas: 143
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 79
+Sanos: 369
+Porcentaje de personas suceptibles: 36%
+Cantidad de personas enfermas: 21
+Porcentaje de personas enfermas:2%
+Cantidad de personas inmunes: 467
+Porcentajes de personas inmunes: 46
+Cantidad de personas muertas: 143
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 80
+Sanos: 368
+Porcentaje de personas suceptibles: 36%
+Cantidad de personas enfermas: 19
+Porcentaje de personas enfermas:1%
+Cantidad de personas inmunes: 470
+Porcentajes de personas inmunes: 47
+Cantidad de personas muertas: 143
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 81
+Sanos: 367
+Porcentaje de personas suceptibles: 36%
+Cantidad de personas enfermas: 18
+Porcentaje de personas enfermas:1%
+Cantidad de personas inmunes: 470
+Porcentajes de personas inmunes: 47
+Cantidad de personas muertas: 145
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 82
+Sanos: 366
+Porcentaje de personas suceptibles: 36%
+Cantidad de personas enfermas: 17
+Porcentaje de personas enfermas:1%
+Cantidad de personas inmunes: 472
+Porcentajes de personas inmunes: 47
+Cantidad de personas muertas: 145
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 83
+Sanos: 365
+Porcentaje de personas suceptibles: 36%
+Cantidad de personas enfermas: 17
+Porcentaje de personas enfermas:1%
+Cantidad de personas inmunes: 473
+Porcentajes de personas inmunes: 47
+Cantidad de personas muertas: 145
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 84
+Sanos: 365
+Porcentaje de personas suceptibles: 36%
+Cantidad de personas enfermas: 17
+Porcentaje de personas enfermas:1%
+Cantidad de personas inmunes: 473
+Porcentajes de personas inmunes: 47
+Cantidad de personas muertas: 145
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 85
+Sanos: 365
+Porcentaje de personas suceptibles: 36%
+Cantidad de personas enfermas: 17
+Porcentaje de personas enfermas:1%
+Cantidad de personas inmunes: 473
+Porcentajes de personas inmunes: 47
+Cantidad de personas muertas: 145
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 86
+Sanos: 365
+Porcentaje de personas suceptibles: 36%
+Cantidad de personas enfermas: 15
+Porcentaje de personas enfermas:1%
+Cantidad de personas inmunes: 475
+Porcentajes de personas inmunes: 47
+Cantidad de personas muertas: 145
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 87
+Sanos: 365
+Porcentaje de personas suceptibles: 36%
+Cantidad de personas enfermas: 13
+Porcentaje de personas enfermas:1%
+Cantidad de personas inmunes: 477
+Porcentajes de personas inmunes: 47
+Cantidad de personas muertas: 145
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 88
+Sanos: 365
+Porcentaje de personas suceptibles: 36%
+Cantidad de personas enfermas: 13
+Porcentaje de personas enfermas:1%
+Cantidad de personas inmunes: 477
+Porcentajes de personas inmunes: 47
+Cantidad de personas muertas: 145
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 89
+Sanos: 365
+Porcentaje de personas suceptibles: 36%
+Cantidad de personas enfermas: 12
+Porcentaje de personas enfermas:1%
+Cantidad de personas inmunes: 478
+Porcentajes de personas inmunes: 47
+Cantidad de personas muertas: 145
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 90
+Sanos: 364
+Porcentaje de personas suceptibles: 36%
+Cantidad de personas enfermas: 11
+Porcentaje de personas enfermas:1%
+Cantidad de personas inmunes: 480
+Porcentajes de personas inmunes: 48
+Cantidad de personas muertas: 145
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 91
+Sanos: 363
+Porcentaje de personas suceptibles: 36%
+Cantidad de personas enfermas: 11
+Porcentaje de personas enfermas:1%
+Cantidad de personas inmunes: 481
+Porcentajes de personas inmunes: 48
+Cantidad de personas muertas: 145
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 92
+Sanos: 363
+Porcentaje de personas suceptibles: 36%
+Cantidad de personas enfermas: 11
+Porcentaje de personas enfermas:1%
+Cantidad de personas inmunes: 481
+Porcentajes de personas inmunes: 48
+Cantidad de personas muertas: 145
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 93
+Sanos: 362
+Porcentaje de personas suceptibles: 36%
+Cantidad de personas enfermas: 10
+Porcentaje de personas enfermas:1%
+Cantidad de personas inmunes: 482
+Porcentajes de personas inmunes: 48
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 94
+Sanos: 362
+Porcentaje de personas suceptibles: 36%
+Cantidad de personas enfermas: 10
+Porcentaje de personas enfermas:1%
+Cantidad de personas inmunes: 482
+Porcentajes de personas inmunes: 48
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 95
+Sanos: 362
+Porcentaje de personas suceptibles: 36%
+Cantidad de personas enfermas: 9
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 483
+Porcentajes de personas inmunes: 48
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 96
+Sanos: 362
+Porcentaje de personas suceptibles: 36%
+Cantidad de personas enfermas: 8
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 484
+Porcentajes de personas inmunes: 48
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 97
+Sanos: 362
+Porcentaje de personas suceptibles: 36%
+Cantidad de personas enfermas: 8
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 484
+Porcentajes de personas inmunes: 48
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 98
+Sanos: 362
+Porcentaje de personas suceptibles: 36%
+Cantidad de personas enfermas: 7
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 485
+Porcentajes de personas inmunes: 48
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 99
+Sanos: 361
+Porcentaje de personas suceptibles: 36%
+Cantidad de personas enfermas: 8
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 485
+Porcentajes de personas inmunes: 48
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 100
+Sanos: 361
+Porcentaje de personas suceptibles: 36%
+Cantidad de personas enfermas: 7
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 486
+Porcentajes de personas inmunes: 48
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 101
+Sanos: 360
+Porcentaje de personas suceptibles: 36%
+Cantidad de personas enfermas: 7
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 487
+Porcentajes de personas inmunes: 48
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 102
+Sanos: 360
+Porcentaje de personas suceptibles: 36%
+Cantidad de personas enfermas: 6
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 488
+Porcentajes de personas inmunes: 48
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 103
+Sanos: 360
+Porcentaje de personas suceptibles: 36%
+Cantidad de personas enfermas: 5
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 489
+Porcentajes de personas inmunes: 48
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 104
+Sanos: 360
+Porcentaje de personas suceptibles: 36%
+Cantidad de personas enfermas: 5
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 489
+Porcentajes de personas inmunes: 48
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 105
+Sanos: 360
+Porcentaje de personas suceptibles: 36%
+Cantidad de personas enfermas: 5
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 489
+Porcentajes de personas inmunes: 48
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 106
+Sanos: 360
+Porcentaje de personas suceptibles: 36%
+Cantidad de personas enfermas: 5
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 489
+Porcentajes de personas inmunes: 48
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 107
+Sanos: 360
+Porcentaje de personas suceptibles: 36%
+Cantidad de personas enfermas: 5
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 489
+Porcentajes de personas inmunes: 48
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 108
+Sanos: 360
+Porcentaje de personas suceptibles: 36%
+Cantidad de personas enfermas: 5
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 489
+Porcentajes de personas inmunes: 48
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 109
+Sanos: 360
+Porcentaje de personas suceptibles: 36%
+Cantidad de personas enfermas: 5
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 489
+Porcentajes de personas inmunes: 48
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 110
+Sanos: 360
+Porcentaje de personas suceptibles: 36%
+Cantidad de personas enfermas: 4
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 490
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 111
+Sanos: 360
+Porcentaje de personas suceptibles: 36%
+Cantidad de personas enfermas: 3
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 491
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 112
+Sanos: 360
+Porcentaje de personas suceptibles: 36%
+Cantidad de personas enfermas: 3
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 491
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 113
+Sanos: 360
+Porcentaje de personas suceptibles: 36%
+Cantidad de personas enfermas: 2
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 492
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 114
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 3
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 492
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 115
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 3
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 492
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 116
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 3
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 492
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 117
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 3
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 492
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 118
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 3
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 492
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 119
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 2
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 493
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 120
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 2
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 493
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 121
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 1
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 494
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 122
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 1
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 494
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 123
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 1
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 494
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 124
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 1
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 494
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 125
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 1
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 494
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 126
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 1
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 494
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 127
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 1
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 494
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 128
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 1
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 494
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 129
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 1
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 494
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 130
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 1
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 494
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 131
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 1
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 494
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 132
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 1
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 494
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 133
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 1
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 494
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 134
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 135
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 136
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 137
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 138
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 139
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 140
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 141
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 142
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 143
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 144
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 145
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 146
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 147
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 148
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 149
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 150
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 151
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 152
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 153
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 154
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 155
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 156
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 157
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 158
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 159
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 160
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 161
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 162
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 163
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 164
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 165
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 166
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 167
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 168
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 169
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 170
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 171
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 172
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 173
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 174
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 175
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 176
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 177
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 178
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 179
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 180
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 181
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 182
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 183
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 184
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 185
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 186
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 187
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 188
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 189
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 190
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 191
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 192
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 193
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 194
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 195
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 196
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 197
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 198
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 199
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 200
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 201
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 202
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 203
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 204
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 205
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 206
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 207
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 208
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 209
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 210
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 211
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 212
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 213
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 214
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 215
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 216
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 217
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 218
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 219
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 220
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 221
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 222
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 223
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 224
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 225
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 226
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 227
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 228
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 229
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 230
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 231
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 232
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 233
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 234
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 235
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 236
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 237
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 238
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 239
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 240
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 241
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 242
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 243
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 244
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 245
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 246
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 247
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 248
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
+-------------------------------------------------
+Tic: 249
+Sanos: 359
+Porcentaje de personas suceptibles: 35%
+Cantidad de personas enfermas: 0
+Porcentaje de personas enfermas:0%
+Cantidad de personas inmunes: 495
+Porcentajes de personas inmunes: 49
+Cantidad de personas muertas: 146
+Porcentaje de personas muertas: 14%
