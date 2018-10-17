@@ -45,8 +45,8 @@ void ClaseSimulador::llenarLista(double cantInfec, double infec, double rec, int
 				}
 				poblacion.push_back(persona);
 				if (r == 's') {
-					cout << "Estado: " << persona.getEstado() << " X: " << persona.getPosicion().first << "Y: " << persona.getPosicion().second << endl;
-					bit << "Estado: " << persona.getEstado() << " X: " << persona.getPosicion().first << "Y: " << persona.getPosicion().second << endl;
+					//cout << "Estado: " << persona.getEstado() << " X: " << persona.getPosicion().first << "Y: " << persona.getPosicion().second << endl;
+					//bit << "Estado: " << persona.getEstado() << " X: " << persona.getPosicion().first << "Y: " << persona.getPosicion().second << endl;
 				}
 			}
 		}
@@ -312,17 +312,25 @@ void ClaseSimulador::revisar(int cantSemana, ofstream& bit){ //Se muere a la sem
 			muertos++;
 		}
 	}
-	cout << "Sanos: " << sanos << endl;
+	cout << "Cantidad de personas suceptibles: " << sanos << endl;
 	bit << "Sanos: " << sanos << endl;
+	cout << "Porcentaje de personas suceptibles: " << (sanos * 0,1) << "%" << endl;
+	bit << "Porcentaje de personas suceptibles: " << (sanos * 0,1) << "%" << endl;
 
-	cout << "Enfermos: " << enfermos << endl;
-	bit << "Enfermos:" << enfermos << endl;
+	cout << "Cantidad de personas enfermas: " << enfermos << endl;
+	bit << "Cantidad de personas enfermas: " << enfermos << endl;
+	cout << "Porcentaje de personas enfermas:" << (enfermos * 0,1) << "%" << endl;
+	bit << "Porcentaje de personas enfermas:" << (enfermos*0,1) <<"%"<< endl;
 
-	cout << "Inmunes: " << inmunes << endl;
-	bit << "Inmunes: " << inmunes << endl;
+	cout << "Cantidad de personas inmunes: " << inmunes << endl;
+	bit << "Cantidad de personas inmunes: " << inmunes << endl;
+	cout << "Porcentajes de personas inmunes: " << (inmunes*100)<< "%"<<endl;
+	bit << "Porcentajes de personas inmunes: " << (inmunes * 0,1) << endl;
 
-	cout << "Muertos: " << muertos << endl;
-	bit << "Muertos: " << muertos << endl;
+	cout << "Cantidad de personas muertas: " << muertos << endl;
+	bit << "Cantidad de personas muertas: " << muertos << endl;
+	cout << "Porcentaje de personas muertas: " << (muertos*0,1) <<"%"<< endl;
+	bit << "Porcentaje de personas muertas: " << (muertos * 0,1) << "%" << endl;
 }
 
 bool ClaseSimulador::infectar(ClasePersona persona)
