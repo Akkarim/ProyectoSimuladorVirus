@@ -1,0 +1,7 @@
+FELIPE CARMONA B51558 & LUIS CARVAJAL B31494
+
+Al ejecutar el programa se le van a pedir los datos que desea insertar.
+En caso de que ingrese mal un valor, se le infirmará con un mensaje de error.
+Y se le volverán a solicitar todos los datos.
+
+Los datos completos se imprimen en consola y además se guardan en una bitácora.

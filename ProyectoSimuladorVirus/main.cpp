@@ -17,27 +17,43 @@ ClasePersona persona;
 ClaseSimulador simulador;
 
 int main(int argc, char* argv[]) {
+	bool rev = true; //Esta variable es para revison de errores
 
 	double probaInfeccion, probaRecuperacion, cantPersonasInfectadas;
 	int cantSemanas, tics, tamMatriz, cantPersonas;
-
-	cout << "Ingrese la Cantidad de Personas: " << endl;
-	cin >> cantPersonas;
-
-	cout << "Pontencia Infecciosa: " << endl;
-	cin >> probaInfeccion;
-
-	cout << "Probabilidad de Recuperacion: " << endl;
-	cin >> probaRecuperacion;
-
-	cout << "Semanas antes de morir o sanar: " << endl;
-	cin >> cantSemanas;
-
-	cout << "Porcentage de personas originalmente infectadas: " << endl;
-	cin >> cantPersonasInfectadas;
-
-	int c;
+	char r;
 	do {
+		cout << "Ingrese la Cantidad de Personas: " << endl;
+		cin >> cantPersonas;
+		if (cantPersonas < 50) {
+			cout << "La cantidad de personas debe ser igual o mayor a 50" << endl;
+			rev = false;
+		}
+		cout << "Pontencia Infecciosa: " << endl;
+		cin >> probaInfeccion;
+		if (probaInfeccion<1||probaInfeccion>100) {
+			cout << "La probabilidad debe ser entre 1 y 100" << endl;
+			rev = false;
+		}
+		cout << "Probabilidad de Recuperacion: " << endl;
+		cin >> probaRecuperacion;
+		if (probaRecuperacion<1 || probaRecuperacion>100) {
+			cout << "La probabilidad debe ser entre 1 y 100" << endl;
+			rev = false;
+		}
+		cout << "Semanas antes de morir o sanar: " << endl;
+		cin >> cantSemanas;
+		if (cantSemanas<1) {
+			cout<<"La cantidad de semanas debe ser mayor a uno"<<endl;
+			rev = false;
+		}
+		cout << "Porcentage de personas originalmente infectadas: " << endl;
+		cin >> cantPersonasInfectadas;
+		if (cantPersonasInfectadas<1 || cantPersonasInfectadas>100) {
+			cout << "El porcentaje debe ser entre 1 y 100" << endl;
+			rev = false;
+		}
+		int c;
 		cout << "Ingrese el tamano de la Matriz de infeccion: \n1) 100x100\n2)500x500\n3)1000x1000\n4)35x35(datos prueba)" << endl; //intentar iterar esto
 		cin >> c;
 		switch (c) {
@@ -55,15 +71,19 @@ int main(int argc, char* argv[]) {
 			break;
 		default:
 			cout << "Error \n Por favor ingrese un numero valido. " << endl;
+			rev = false;
 		}
-	} while (c > 4);
-	cout << "Cantidad de tics: " << endl;
-	cin >> tics;
+		
+		cout << "Cantidad de tics: " << endl;
+		cin >> tics;
+		if (tics < cantSemanas) {
+			cout<<"La cantidad de tics debe ser mayor al limite de semanas"<<endl;
+			rev = false;
+		}
+		cout << "¿Desea ver la disposicion de la matriz? (s/n) " << endl;
+		cin >> r;
 
-	char r;
-	cout << "¿Desea ver la disposicion de la matriz? (s/n) " << endl;
-	cin >> r;
-
+	} while (!rev);
 	int cantHilos = omp_get_max_threads();
 
 	ofstream bit("bitacora.txt");
