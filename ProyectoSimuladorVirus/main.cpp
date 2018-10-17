@@ -12,20 +12,11 @@ using namespace std;
 ClasePersona persona;
 ClaseSimulador simulador;
 int main(int argc, char* argv[]) {
-	double inf, rec;
-	//cout << "Inserte la probabilidad de Infección: "<< endl;
-	//cin >> inf;
-	//cout << "Inserte la proba de Recuperación: " << endl;
-	//cin >> rec;
-	//simulador.llenarLista(10,25,25,100,20);
-	//simulador.mover();
-	//persona.setProbaInf(inf);
-	//persona.setProbaRec(rec);
 
-	/*double probaInfeccion, probaRecuperacion;
-	int cantSemanas, tics, tamMatriz, cantPersonas, cantPersonasInfectadas;
+	double probaInfeccion, probaRecuperacion, cantPersonasInfectadas;
+	int cantSemanas, tics, tamMatriz, cantPersonas;
 
-	cout << "Ingrese la Cantidad de personas: (Vea Yogurt) " << endl;
+	cout << "Ingrese la Cantidad de personas: " << endl;
 	cin >> cantPersonas;
 
 	cout << "Pontencia Infecciosa: " << endl;
@@ -43,35 +34,41 @@ int main(int argc, char* argv[]) {
 	cout << "Ingrese el tamano de la Matriz de infeccion: \n1) 100x100\n2)500x500\n3)1000x1000" << endl;
 	int c;
 	cin >> c;
-	switch(c) {
-		case 1:  
-			tamMatriz = 100;
-			break;
-		case 2: 
-			tamMatriz = 500;
-			break;
-		case 3:
-			tamMatriz = 1000;
-			break;
-		default:
-			cout << "Vea Yogurt, métame un número válido. " << endl;
+	switch (c) {
+	case 1:
+		tamMatriz = 100;
+		break;
+	case 2:
+		tamMatriz = 500;
+		break;
+	case 3:
+		tamMatriz = 1000;
+		break;
+	default:
+		cout << "Vea Yogurt, métame un número válido. " << endl;
 	}
-	
 
 	cout << "Cantidad de tics: " << endl;
-	cin >> tics;*/
+	cin >> tics;
 
-	ClaseSimulador simulador;
-	ClasePersona pipol;
+	int cantHilos = omp_get_max_threads();
 
+	cout << "Se va a trabajar con " << cantHilos << "hilos" << endl;
+
+<<<<<<< HEAD
 	simulador.llenarLista(10, 65, 75, 35, 250);
 	
 
 	for (int i = 0; i < 158; i++) {
+=======
+	simulador.llenarLista(cantPersonasInfectadas, probaInfeccion, probaRecuperacion, tamMatriz, cantPersonas);
+	
+	for (int i = 0; i < tics; i++) {
+>>>>>>> af3da47029803ed18e1d6118eb183ce904ad1041
 		cout << "Tic: " << i << endl;
 		simulador.mover();
 		cout << "-------------------------------------------------" << endl;
-		simulador.revisar(20);
+		simulador.revisar(cantSemanas);
 	}
 
 
