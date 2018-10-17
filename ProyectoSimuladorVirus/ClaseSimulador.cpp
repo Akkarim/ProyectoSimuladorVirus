@@ -13,7 +13,7 @@ ClaseSimulador::~ClaseSimulador()
 }
 
 
-void ClaseSimulador::llenarLista(double cantInfec, double infec, double rec, int tamano, int cantidad)
+void ClaseSimulador::llenarLista(double cantInfec, double infec, double rec, int tamano, int cantidad, ofstream& bit, char r)
 {
 	poblacionInfectada.resize(tamano);
 	//poblacion.resize(cantidad);
@@ -43,7 +43,10 @@ void ClaseSimulador::llenarLista(double cantInfec, double infec, double rec, int
 					poblacionInfectada[persona.getPosicion().first][persona.getPosicion().second]=0;//Se pone un cero para mostrar que esa posición está ocupada.
 				}
 				poblacion.push_back(persona);
-				cout << "Estado: " << persona.getEstado() << " X: " << persona.getPosicion().first << "Y: " << persona.getPosicion().second << endl;
+				if (r == 's') {
+					//cout << "Estado: " << persona.getEstado() << " X: " << persona.getPosicion().first << "Y: " << persona.getPosicion().second << endl;
+					//bit << "Estado: " << persona.getEstado() << " X: " << persona.getPosicion().first << "Y: " << persona.getPosicion().second << endl;
+				}
 			}
 		}
 }
@@ -258,8 +261,7 @@ void ClaseSimulador::mover()
 }
 
 
-void ClaseSimulador::revisar(int cantSemana){ //Se muere a la semana 2
-	//revisar.todo("hágalo bien :D" + "plis");
+void ClaseSimulador::revisar(int cantSemana, ofstream& bit){ //Se muere a la semana 20
 	int c = 0;
 #pragma omp parallel for num_threads(4) private(c) shared(cantSemana)
 	for (int i = 0; i < poblacion.size(); i++) {
@@ -308,10 +310,25 @@ void ClaseSimulador::revisar(int cantSemana){ //Se muere a la semana 2
 			muertos++;
 		}
 	}
-	cout << "Sanos: " << sanos << endl;
-	cout << "Enfermos: " << enfermos << endl;
-	cout << "Inmunes: " << inmunes << endl;
-	cout << "Muertos: " << muertos << endl;
+	cout << "Cantidad de personas suceptibles: " << sanos << endl;
+	bit << "Sanos: " << sanos << endl;
+	cout << "Porcentaje de personas suceptibles: " << (sanos * 0,1) << "%" << endl;
+	bit << "Porcentaje de personas suceptibles: " << (sanos * 0,1) << "%" << endl;
+
+	cout << "Cantidad de personas enfermas: " << enfermos << endl;
+	bit << "Cantidad de personas enfermas: " << enfermos << endl;
+	cout << "Porcentaje de personas enfermas:" << (enfermos * 0,1) << "%" << endl;
+	bit << "Porcentaje de personas enfermas:" << (enfermos*0,1) <<"%"<< endl;
+
+	cout << "Cantidad de personas inmunes: " << inmunes << endl;
+	bit << "Cantidad de personas inmunes: " << inmunes << endl;
+	cout << "Porcentajes de personas inmunes: " << (inmunes*100)<< "%"<<endl;
+	bit << "Porcentajes de personas inmunes: " << (inmunes * 0,1) << endl;
+
+	cout << "Cantidad de personas muertas: " << muertos << endl;
+	bit << "Cantidad de personas muertas: " << muertos << endl;
+	cout << "Porcentaje de personas muertas: " << (muertos*0,1) <<"%"<< endl;
+	bit << "Porcentaje de personas muertas: " << (muertos * 0,1) << "%" << endl;
 }
 
 bool ClaseSimulador::infectar(ClasePersona persona)
@@ -336,9 +353,6 @@ bool ClaseSimulador::curar(ClasePersona persona)
 	}
 }
 
-
-
-
 double ClaseSimulador::genRandom() {
 	//default_random_engine gen(time(NULL));
 	//uniform_real_distribution<double> distribution(0,1);
@@ -349,18 +363,6 @@ double ClaseSimulador::genRandom() {
 	//return perra;
 	return rand() / (RAND_MAX + 1.);
 }
-
-
-/*int myints[] = {75,23,65,42,13};
-  std::list<int> mylist (myints,myints+5);
-
-  std::cout << "mylist contains:";
-  for (std::list<int>::iterator it=mylist.begin(); it != mylist.end(); ++it)
-    std::cout << ' ' << poblacion[i];
-
-  std::cout << '\n';
-
-  return 0;*/
 
 pair<int, int> ClaseSimulador::generarPosRandom(int tam)
 {

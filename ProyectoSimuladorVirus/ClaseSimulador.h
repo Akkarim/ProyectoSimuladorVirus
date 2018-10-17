@@ -4,6 +4,7 @@
 #include <omp.h>
 #include "ClasePersona.h"
 #include <chrono>
+#include <fstream>
 #include <random>
 #include <time.h>
 #include <stdlib.h> 
@@ -20,7 +21,7 @@ public:
 	//EFE: Genera una matriz con los estados de cada persona
 	//REQ: Un M coherente con la cantidad de personas
 	//MOD: matrizEstado
-	void llenarLista(double cantInfec, double infec, double rec, int tamano, int cantidad);
+	void llenarLista(double cantInfec, double infec, double rec, int tamano, int cantidad, ofstream& bit, char r);
 
 	//EFE:
 	//REQ:
@@ -30,7 +31,7 @@ public:
 	//EFE:
 	//REQ:
 	//MOD:
-	void revisar(int contSem);
+	void revisar(int contSem, ofstream& bit);
 
 	//EFE:
 	//REQ:
@@ -89,8 +90,6 @@ public:
 	double genRandom();
 
 private:
-
-	
 	pair<int, int> posAnt, posAux;
 	vector<vector<int>> poblacionInfectada; //Matriz con la cantidad de enfermos por posición
 	vector<ClasePersona> poblacion; //Lista con todas las personas.
